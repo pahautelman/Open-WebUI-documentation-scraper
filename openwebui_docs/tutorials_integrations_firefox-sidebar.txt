@@ -1,0 +1,288 @@
+reference: https://docs.openwebui.com/tutorials/integrations/firefox-sidebar
+title: 🦊 Firefox AI Chatbot Sidebar
+
+📝 Tutorials🔗 Integrations🦊 Firefox AI Chatbot Sidebar
+
+📝 Tutorials
+
+🔗 Integrations
+
+🦊 Firefox AI Chatbot Sidebar
+
+This tutorial is a community contribution and is not supported by the Open WebUI team. It serves only as a demonstration on how to customize Open WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.
+
+🦊 Firefox AI Chatbot Sidebar​
+
+Prerequisites​
+
+Before integrating Open WebUI as a AI chatbot browser assistant in Mozilla Firefox, ensure you have:
+
+Open WebUI instance URL (local or domain) Firefox browser installed
+
+Open WebUI instance URL (local or domain)
+
+Firefox browser installed
+
+Enabling AI Chatbot in Firefox​
+
+Click on the hamburger button (three horizontal lines button at the top right corner, just below the X button) Open up Firefox settings Click on the Firefox Labs section Toggle on AI Chatbot
+
+Click on the hamburger button (three horizontal lines button at the top right corner, just below the X button)
+
+X
+
+Open up Firefox settings
+
+Click on the Firefox Labs section
+
+Firefox Labs
+
+Toggle on AI Chatbot
+
+AI Chatbot
+
+Alternatively, you can enable AI Chatbot through the about:config page (described in the next section).
+
+about:config
+
+Configuring about:config Settings​
+
+Type about:config in the Firefox address bar Click Accept the Risk and Continue Search for browser.ml.chat.enabled and toggle it to true if it's not already enabled through Firefox Labs Search for browser.ml.chat.hideLocalhost and toggle it to false
+
+Type about:config in the Firefox address bar
+
+about:config
+
+Click Accept the Risk and Continue
+
+Accept the Risk and Continue
+
+Search for browser.ml.chat.enabled and toggle it to true if it's not already enabled through Firefox Labs
+
+browser.ml.chat.enabled
+
+true
+
+Search for browser.ml.chat.hideLocalhost and toggle it to false
+
+browser.ml.chat.hideLocalhost
+
+false
+
+browser.ml.chat.prompts.#​
+
+To add custom prompts, follow these steps:
+
+Search for browser.ml.chat.prompts.# (replace # with a number, e.g., 0, 1, 2, etc.) Click the + button to add a new prompt Enter the prompt label, value, and ID (e.g., {"id":"My Prompt", "value": "This is my custom prompt.", "label": "My Prompt"}) Repeat the process to add more prompts as desired
+
+Search for browser.ml.chat.prompts.# (replace # with a number, e.g., 0, 1, 2, etc.)
+
+browser.ml.chat.prompts.#
+
+#
+
+0
+
+1
+
+2
+
+Click the + button to add a new prompt
+
++
+
+Enter the prompt label, value, and ID (e.g., {"id":"My Prompt", "value": "This is my custom prompt.", "label": "My Prompt"})
+
+{"id":"My Prompt", "value": "This is my custom prompt.", "label": "My Prompt"}
+
+Repeat the process to add more prompts as desired
+
+browser.ml.chat.provider​
+
+Search for browser.ml.chat.provider Enter your Open WebUI instance URL, including any optional parameters (e.g., https://my-open-webui-instance.com/?model=browser-productivity-assistant&temporary-chat=true&tools=jina_web_scrape)
+
+Search for browser.ml.chat.provider
+
+browser.ml.chat.provider
+
+Enter your Open WebUI instance URL, including any optional parameters (e.g., https://my-open-webui-instance.com/?model=browser-productivity-assistant&temporary-chat=true&tools=jina_web_scrape)
+
+https://my-open-webui-instance.com/?model=browser-productivity-assistant&temporary-chat=true&tools=jina_web_scrape
+
+URL Parameters for Open WebUI​
+
+The following URL parameters can be used to customize your Open WebUI instance:
+
+Models and Model Selection​
+
+models: Specify multiple models (comma-separated list) for the chat session (e.g., /?models=model1,model2) model: Specify a single model for the chat session (e.g., /?model=model1)
+
+models: Specify multiple models (comma-separated list) for the chat session (e.g., /?models=model1,model2)
+
+models
+
+/?models=model1,model2
+
+model: Specify a single model for the chat session (e.g., /?model=model1)
+
+model
+
+/?model=model1
+
+YouTube Transcription​
+
+youtube: Provide a YouTube video ID to transcribe the video in the chat (e.g., /?youtube=VIDEO_ID)
+
+youtube: Provide a YouTube video ID to transcribe the video in the chat (e.g., /?youtube=VIDEO_ID)
+
+youtube
+
+/?youtube=VIDEO_ID
+
+Web Search​
+
+web-search: Enable web search functionality by setting this parameter to true (e.g., /?web-search=true)
+
+web-search: Enable web search functionality by setting this parameter to true (e.g., /?web-search=true)
+
+web-search
+
+true
+
+/?web-search=true
+
+Tool Selection​
+
+tools or tool-ids: Specify a comma-separated list of tool IDs to activate in the chat (e.g., /?tools=tool1,tool2 or /?tool-ids=tool1,tool2)
+
+tools or tool-ids: Specify a comma-separated list of tool IDs to activate in the chat (e.g., /?tools=tool1,tool2 or /?tool-ids=tool1,tool2)
+
+tools
+
+tool-ids
+
+/?tools=tool1,tool2
+
+/?tool-ids=tool1,tool2
+
+Call Overlay​
+
+call: Enable a video or call overlay in the chat interface by setting this parameter to true (e.g., /?call=true)
+
+call: Enable a video or call overlay in the chat interface by setting this parameter to true (e.g., /?call=true)
+
+call
+
+true
+
+/?call=true
+
+Initial Query Prompt​
+
+q: Set an initial query or prompt for the chat (e.g., /?q=Hello%20there)
+
+q: Set an initial query or prompt for the chat (e.g., /?q=Hello%20there)
+
+q
+
+/?q=Hello%20there
+
+Temporary Chat Sessions​
+
+temporary-chat: Mark the chat as a temporary session by setting this parameter to true (e.g., /?temporary-chat=true)
+
+temporary-chat: Mark the chat as a temporary session by setting this parameter to true (e.g., /?temporary-chat=true)
+
+temporary-chat
+
+true
+
+/?temporary-chat=true
+
+See https://docs.openwebui.com/features/chat-features/url-params for more info on URL parameters and how to use them.
+
+Additional about:config Settings​
+
+The following about:config settings can be adjusted for further customization:
+
+about:config
+
+browser.ml.chat.shortcuts: Enable custom shortcuts for the AI chatbot sidebar browser.ml.chat.shortcuts.custom: Enable custom shortcut keys for the AI chatbot sidebar browser.ml.chat.shortcuts.longPress: Set the long press delay for shortcut keys browser.ml.chat.sidebar: Enable the AI chatbot sidebar browser.ml.checkForMemory: Check for available memory before loading models browser.ml.defaultModelMemoryUsage: Set the default memory usage for models browser.ml.enable: Enable the machine learning features in Firefox browser.ml.logLevel: Set the log level for machine learning features browser.ml.maximumMemoryPressure: Set the maximum memory pressure threshold browser.ml.minimumPhysicalMemory: Set the minimum physical memory required browser.ml.modelCacheMaxSize: Set the maximum size of the model cache browser.ml.modelCacheTimeout: Set the timeout for model cache browser.ml.modelHubRootUrl: Set the root URL for the model hub browser.ml.modelHubUrlTemplate: Set the URL template for the model hub browser.ml.queueWaitInterval: Set the interval for queue wait browser.ml.queueWaitTimeout: Set the timeout for queue wait
+
+browser.ml.chat.shortcuts: Enable custom shortcuts for the AI chatbot sidebar
+
+browser.ml.chat.shortcuts
+
+browser.ml.chat.shortcuts.custom: Enable custom shortcut keys for the AI chatbot sidebar
+
+browser.ml.chat.shortcuts.custom
+
+browser.ml.chat.shortcuts.longPress: Set the long press delay for shortcut keys
+
+browser.ml.chat.shortcuts.longPress
+
+browser.ml.chat.sidebar: Enable the AI chatbot sidebar
+
+browser.ml.chat.sidebar
+
+browser.ml.checkForMemory: Check for available memory before loading models
+
+browser.ml.checkForMemory
+
+browser.ml.defaultModelMemoryUsage: Set the default memory usage for models
+
+browser.ml.defaultModelMemoryUsage
+
+browser.ml.enable: Enable the machine learning features in Firefox
+
+browser.ml.enable
+
+browser.ml.logLevel: Set the log level for machine learning features
+
+browser.ml.logLevel
+
+browser.ml.maximumMemoryPressure: Set the maximum memory pressure threshold
+
+browser.ml.maximumMemoryPressure
+
+browser.ml.minimumPhysicalMemory: Set the minimum physical memory required
+
+browser.ml.minimumPhysicalMemory
+
+browser.ml.modelCacheMaxSize: Set the maximum size of the model cache
+
+browser.ml.modelCacheMaxSize
+
+browser.ml.modelCacheTimeout: Set the timeout for model cache
+
+browser.ml.modelCacheTimeout
+
+browser.ml.modelHubRootUrl: Set the root URL for the model hub
+
+browser.ml.modelHubRootUrl
+
+browser.ml.modelHubUrlTemplate: Set the URL template for the model hub
+
+browser.ml.modelHubUrlTemplate
+
+browser.ml.queueWaitInterval: Set the interval for queue wait
+
+browser.ml.queueWaitInterval
+
+browser.ml.queueWaitTimeout: Set the timeout for queue wait
+
+browser.ml.queueWaitTimeout
+
+Accessing the AI Chatbot Sidebar​
+
+To access the AI chatbot sidebar, use one of the following methods:
+
+Press CTRL+B to open the bookmarks sidebar and switch to AI Chatbot Press CTRL+Alt+X to open the AI chatbot sidebar directly
+
+Press CTRL+B to open the bookmarks sidebar and switch to AI Chatbot
+
+CTRL+B
+
+Press CTRL+Alt+X to open the AI chatbot sidebar directly
+
+CTRL+Alt+X

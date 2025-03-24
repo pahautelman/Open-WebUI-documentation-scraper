@@ -1,0 +1,46 @@
+reference: https://docs.openwebui.com/category/-integrations
+title: 
+
+📄️ 🐋 Run DeepSeek R1 Dynamic 1.58-bit with Llama.cpp
+
+A huge shoutout to UnslothAI for their incredible efforts! Thanks to their hard work, we can now run the full DeepSeek-R1 671B parameter model in its dynamic 1.58-bit quantized form (compressed to just 131GB) on Llama.cpp! And the best part? You no longer have to despair about needing massive enterprise-class GPUs or servers — it’s possible to run this model on your personal machine (albeit slowly for most consumer hardware).
+
+📄️ 🖥️ Local LLM Setup with IPEX-LLM on Intel GPU
+
+This tutorial is a community contribution and is not supported by the Open WebUI team. It serves only as a demonstration on how to customize Open WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.
+
+📄️ ⚛️ Continue.dev VSCode Extension with Open WebUI
+
+This tutorial is a community contribution and is not supported by the Open WebUI team. It serves only as a demonstration on how to customize Open WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.
+
+📄️ 🛃 Setting up with Custom CA Store
+
+This tutorial is a community contribution and is not supported by the Open WebUI team. It serves only as a demonstration on how to customize Open WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.
+
+📄️ 🌐 Browser Search Engine
+
+This tutorial is a community contribution and is not supported by the Open WebUI team. It serves only as a demonstration on how to customize Open WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.
+
+📄️ 💥 Monitoring and Debugging with Langfuse
+
+Langfuse (GitHub) offers open source observability and evaluations for OpenWebUI. By enabling the Langfuse integration, you can trace your application data with Langfuse to develop, monitor, and improve the use of OpenWebUI, including:
+
+📄️ 🔠 LibreTranslate Integration
+
+This tutorial is a community contribution and is not supported by the OpenWebUI team. It serves only as a demonstration on how to customize OpenWebUI for your specific use case. Want to contribute? Check out the contributing tutorial.
+
+📄️ 🔗 Redis Websocket Support
+
+This tutorial is a community contribution and is not supported by the Open WebUI team. It serves only as a demonstration on how to customize Open WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.
+
+📄️ 🛌 Integrate with Amazon Bedrock
+
+This tutorial is a community contribution and is not supported by the Open WebUI team. It serves only as a demonstration on how to customize Open WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.
+
+📄️ 🪶 Apache Tika Extraction
+
+This tutorial is a community contribution and is not supported by the Open WebUI team. It serves only as a demonstration on how to customize Open WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.
+
+📄️ 🦊 Firefox AI Chatbot Sidebar
+
+This tutorial is a community contribution and is not supported by the Open WebUI team. It serves only as a demonstration on how to customize Open WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.

@@ -1,0 +1,104 @@
+reference: https://docs.openwebui.com/tutorials/web-search/searchapi
+title: SearchApi
+
+📝 Tutorials🌐 Web SearchSearchApi
+
+📝 Tutorials
+
+🌐 Web Search
+
+SearchApi
+
+This tutorial is a community contribution and is not supported by the Open WebUI team. It serves only as a demonstration on how to customize Open WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.
+
+SearchApi API​
+
+SearchApi is a collection of real-time SERP APIs. Any existing or upcoming SERP engine that returns organic_results is supported. The default web search engine is google, but it can be changed to bing, baidu, google_news, bing_news, google_scholar, google_patents, and others.
+
+organic_results
+
+google
+
+bing
+
+baidu
+
+google_news
+
+bing_news
+
+google_scholar
+
+google_patents
+
+Setup​
+
+Go to SearchApi, and log on or create a new account. Go to Dashboard and copy the API key. With API key, open Open WebUI Admin panel and click Settings tab, and then click Web Search. Enable Web search and set Web Search Engine to searchapi. Fill SearchApi API Key with the API key that you copied in step 2 from SearchApi dashboard. [Optional] Enter the SearchApi engine name you want to query. Example, google, bing, baidu, google_news, bing_news, google_videos, google_scholar and google_patents. By default, it is set to google. Click Save.
+
+Go to SearchApi, and log on or create a new account.
+
+Go to Dashboard and copy the API key.
+
+Dashboard
+
+With API key, open Open WebUI Admin panel and click Settings tab, and then click Web Search.
+
+API key
+
+Open WebUI Admin panel
+
+Settings
+
+Web Search
+
+Enable Web search and set Web Search Engine to searchapi.
+
+Web search
+
+Web Search Engine
+
+searchapi
+
+Fill SearchApi API Key with the API key that you copied in step 2 from SearchApi dashboard.
+
+SearchApi API Key
+
+API key
+
+[Optional] Enter the SearchApi engine name you want to query. Example, google, bing, baidu, google_news, bing_news, google_videos, google_scholar and google_patents. By default, it is set to google.
+
+SearchApi engine
+
+google
+
+bing
+
+baidu
+
+google_news
+
+bing_news
+
+google_videos
+
+google_scholar
+
+google_patents.
+
+google
+
+Click Save.
+
+Save
+
+[Image: Open WebUI Admin panel]
+
+Note​
+
+You have to enable Web search in the prompt field, using plus (+) button to search the web using SearchApi engines.
+
+Web search
+
++
+
+[Image: enable Web search]

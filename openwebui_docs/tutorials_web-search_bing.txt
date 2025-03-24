@@ -1,0 +1,38 @@
+reference: https://docs.openwebui.com/tutorials/web-search/bing
+title: Bing
+
+📝 Tutorials🌐 Web SearchBing
+
+📝 Tutorials
+
+🌐 Web Search
+
+Bing
+
+This tutorial is a community contribution and is not supported by the Open WebUI team. It serves only as a demonstration on how to customize Open WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.
+
+Bing API​
+
+Setup​
+
+Navigate to the AzurePortal and create a new resource. After creation, you’ll be redirected to the resource overview page. From there, select "Click here to manage keys." On the key management page, locate Key1 or Key2 and copy your desired key. Open the Open WebUI Admin Panel, switch to the Settings tab, and then select Web Search. Enable the Web search option and set the Web Search Engine to bing. Fill SearchApi API Key with the API key that you copied in step 2 from AzurePortal dashboard. Click Save.
+
+Navigate to the AzurePortal and create a new resource. After creation, you’ll be redirected to the resource overview page. From there, select "Click here to manage keys."
+
+[Image: click here to manage keys]
+
+On the key management page, locate Key1 or Key2 and copy your desired key.
+
+Open the Open WebUI Admin Panel, switch to the Settings tab, and then select Web Search.
+
+Enable the Web search option and set the Web Search Engine to bing.
+
+Fill SearchApi API Key with the API key that you copied in step 2 from AzurePortal dashboard.
+
+SearchApi API Key
+
+API key
+
+Click Save.
+
+Save

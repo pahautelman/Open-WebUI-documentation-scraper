@@ -1,0 +1,28 @@
+reference: https://docs.openwebui.com/tutorials/speech-to-text/env-variables
+title: Environment Variables List
+
+📝 Tutorials🎤 Speech To TextEnvironment Variables
+
+📝 Tutorials
+
+🎤 Speech To Text
+
+Environment Variables
+
+For a complete list of all Open WebUI environment variables, see the Environment Variable Configuration page.
+
+The following is a summary of the environment variables for speech to text (STT).
+
+WHISPER_MODEL
+
+WHISPER_MODEL_DIR
+
+AUDIO_STT_ENGINE
+
+openai
+
+AUDIO_STT_MODEL
+
+AUDIO_STT_OPENAI_API_BASE_URL
+
+AUDIO_STT_OPENAI_API_KEY

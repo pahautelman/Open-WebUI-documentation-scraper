@@ -1,0 +1,244 @@
+reference: https://docs.openwebui.com/
+title: Open WebUI
+
+🏡 Home
+
+🏡 Home
+
+Open WebUI is an extensible, feature-rich, and user-friendly self-hosted AI platform designed to operate entirely offline. It supports various LLM runners like Ollama and OpenAI-compatible APIs, with built-in inference engine for RAG, making it a powerful AI deployment solution.
+
+[Image: GitHub stars]
+
+[Image: GitHub forks]
+
+[Image: GitHub watchers]
+
+[Image: GitHub repo size]
+
+[Image: GitHub language count]
+
+[Image: GitHub top language]
+
+[Image: GitHub last commit]
+
+[Image: Hits]
+
+[Image: Discord]
+
+[Image: v1]
+
+[Image: Open WebUI Demo]
+
+Looking for an Enterprise Plan? – Speak with Our Sales Team Today!
+
+Get enhanced capabilities, including custom theming and branding, Service Level Agreement (SLA) support, Long-Term Support (LTS) versions, and more!
+
+Quick Start with Docker 🐳​
+
+WebSocket support is required for Open WebUI to function correctly. Ensure that your network configuration allows WebSocket connections.
+
+If Ollama is on your computer, use this command:
+
+docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+
+docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+
+To run Open WebUI with Nvidia GPU support, use this command:
+
+docker run -d -p 3000:8080 --gpus all --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:cuda
+
+docker run -d -p 3000:8080 --gpus all --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:cuda
+
+Open WebUI Bundled with Ollama​
+
+This installation method uses a single container image that bundles Open WebUI with Ollama, allowing for a streamlined setup via a single command. Choose the appropriate command based on your hardware setup:
+
+With GPU Support: Utilize GPU resources by running the following command: docker run -d -p 3000:8080 --gpus=all -v ollama:/root/.ollama -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:ollama For CPU Only: If you're not using a GPU, use this command instead: docker run -d -p 3000:8080 -v ollama:/root/.ollama -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:ollama
+
+With GPU Support: Utilize GPU resources by running the following command: docker run -d -p 3000:8080 --gpus=all -v ollama:/root/.ollama -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:ollama
+
+With GPU Support: Utilize GPU resources by running the following command:
+
+docker run -d -p 3000:8080 --gpus=all -v ollama:/root/.ollama -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:ollama
+
+docker run -d -p 3000:8080 --gpus=all -v ollama:/root/.ollama -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:ollama
+
+For CPU Only: If you're not using a GPU, use this command instead: docker run -d -p 3000:8080 -v ollama:/root/.ollama -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:ollama
+
+For CPU Only: If you're not using a GPU, use this command instead:
+
+docker run -d -p 3000:8080 -v ollama:/root/.ollama -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:ollama
+
+docker run -d -p 3000:8080 -v ollama:/root/.ollama -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:ollama
+
+Both commands facilitate a built-in, hassle-free installation of both Open WebUI and Ollama, ensuring that you can get everything up and running swiftly.
+
+After installation, you can access Open WebUI at http://localhost:3000. Enjoy! 😄
+
+Using the Dev Branch 🌙​
+
+The :dev branch contains the latest unstable features and changes. Use it at your own risk as it may have bugs or incomplete features.
+
+:dev
+
+If you want to try out the latest bleeding-edge features and are okay with occasional instability, you can use the :dev tag like this:
+
+:dev
+
+docker run -d -p 3000:8080 -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:dev
+
+docker run -d -p 3000:8080 -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:dev
+
+Updating Open WebUI​
+
+To update Open WebUI container easily, follow these steps:
+
+Manual Update​
+
+Use Watchtower to update your Docker container manually:
+
+docker run --rm -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --run-once open-webui
+
+docker run --rm -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --run-once open-webui
+
+Automatic Updates​
+
+Keep your container updated automatically every 5 minutes:
+
+docker run -d --name watchtower --restart unless-stopped -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --interval 300 open-webui
+
+docker run -d --name watchtower --restart unless-stopped -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --interval 300 open-webui
+
+🔧 Note: Replace open-webui with your container name if it's different.
+
+open-webui
+
+Manual Installation​
+
+There are two main ways to install and run Open WebUI: using the uv runtime manager or Python's pip. While both methods are effective, we strongly recommend using uv as it simplifies environment management and minimizes potential conflicts.
+
+uv
+
+pip
+
+uv
+
+Installation with uv (Recommended)​
+
+uv
+
+The uv runtime manager ensures seamless Python environment management for applications like Open WebUI. Follow these steps to get started:
+
+uv
+
+1. Install uv​
+
+uv
+
+Pick the appropriate installation command for your operating system:
+
+macOS/Linux: curl -LsSf https://astral.sh/uv/install.sh | sh Windows: powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+
+macOS/Linux: curl -LsSf https://astral.sh/uv/install.sh | sh
+
+macOS/Linux:
+
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+Windows: powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+
+Windows:
+
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+
+2. Run Open WebUI​
+
+Once uv is installed, running Open WebUI is a breeze. Use the command below, ensuring to set the DATA_DIR environment variable to avoid data loss. Example paths are provided for each platform:
+
+uv
+
+DATA_DIR
+
+macOS/Linux: DATA_DIR=~/.open-webui uvx --python 3.11 open-webui@latest serve Windows: $env:DATA_DIR="C:\open-webui\data"; uvx --python 3.11 open-webui@latest serve
+
+macOS/Linux: DATA_DIR=~/.open-webui uvx --python 3.11 open-webui@latest serve
+
+macOS/Linux:
+
+DATA_DIR=~/.open-webui uvx --python 3.11 open-webui@latest serve
+
+DATA_DIR=~/.open-webui uvx --python 3.11 open-webui@latest serve
+
+Windows: $env:DATA_DIR="C:\open-webui\data"; uvx --python 3.11 open-webui@latest serve
+
+Windows:
+
+$env:DATA_DIR="C:\open-webui\data"; uvx --python 3.11 open-webui@latest serve
+
+$env:DATA_DIR="C:\open-webui\data"; uvx --python 3.11 open-webui@latest serve
+
+Installation with pip​
+
+pip
+
+For users installing Open WebUI with Python's package manager pip, it is strongly recommended to use Python runtime managers like uv or conda. These tools help manage Python environments effectively and avoid conflicts.
+
+pip
+
+uv
+
+conda
+
+Python 3.11 is the development environment. Python 3.12 seems to work but has not been thoroughly tested. Python 3.13 is entirely untested—use at your own risk.
+
+Install Open WebUI: Open your terminal and run the following command: pip install open-webui Start Open WebUI: Once installed, start the server using: open-webui serve
+
+Install Open WebUI: Open your terminal and run the following command: pip install open-webui
+
+Install Open WebUI:
+
+Open your terminal and run the following command:
+
+pip install open-webui
+
+pip install open-webui
+
+Start Open WebUI: Once installed, start the server using: open-webui serve
+
+Start Open WebUI:
+
+Once installed, start the server using:
+
+open-webui serve
+
+open-webui serve
+
+Updating Open WebUI​
+
+To update to the latest version, simply run:
+
+pip install --upgrade open-webui
+
+pip install --upgrade open-webui
+
+This method installs all necessary dependencies and starts Open WebUI, allowing for a simple and efficient setup. After installation, you can access Open WebUI at http://localhost:8080. Enjoy! 😄
+
+Other Installation Methods​
+
+We offer various installation alternatives, including non-Docker native installation methods, Docker Compose, Kustomize, and Helm. Visit our Open WebUI Documentation or join our Discord community for comprehensive guidance.
+
+Continue with the full getting started guide.
+
+Sponsors 🙌​
+
+[Image: Dave Waring]
+
+[Image: Dave Waring]
+
+[Image: Open WebUI]
+
+We are incredibly grateful for the generous support of our sponsors. Their contributions help us to maintain and improve our project, ensuring we can continue to deliver quality work to our community. Thank you!

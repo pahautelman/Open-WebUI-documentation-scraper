@@ -1,0 +1,24 @@
+reference: https://docs.openwebui.com/troubleshooting/
+title: 🛠️ Troubleshooting
+
+🛠️ Troubleshooting
+
+🛠️ Troubleshooting
+
+🌟 General Troubleshooting Tips​
+
+Encountering issues? Don't worry, we're here to help! 😊 Start with this important step:
+
+🔄 Make sure you're using the latest version of the software.
+
+🔄 Make sure you're using the latest version of the software.
+
+With this project constantly evolving, updates and fixes are regularly added. Keeping your software up-to-date is crucial to take advantage of all the enhancements and fixes, ensuring the best possible experience. 🚀
+
+🤝 Community Support​
+
+This project thrives on community spirit and passion. If you still face problems after updating, we warmly invite you to join our vibrant community on Discord. There, you can share your experiences, find solutions, and connect with fellow enthusiasts who might be navigating similar challenges. Engaging with our community doesn't just help solve your problems; it strengthens the entire network of support, so we all grow together. 🌱
+
+🌟 If your issues are pressing and you need a quicker resolution, consider supporting our project. Your sponsorship not only fast-tracks your queries in a dedicated sponsor-only channel, but also directly supports the dedicated maintainer who is passionately committed to refining and enhancing this tool for everyone.
+
+Together, let's harness these opportunities to create the best environment and keep pushing the boundaries of what we can achieve with our project. Thank you from the bottom of our hearts for your understanding, cooperation, and belief in our mission! 🙏

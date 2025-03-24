@@ -1,0 +1,60 @@
+reference: https://docs.openwebui.com/tutorials/web-search/mojeek
+title: Mojeek
+
+📝 Tutorials🌐 Web SearchMojeek
+
+📝 Tutorials
+
+🌐 Web Search
+
+Mojeek
+
+This tutorial is a community contribution and is not supported by the Open WebUI team. It serves only as a demonstration on how to customize Open WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.
+
+Mojeek Search API​
+
+Setup​
+
+Please visit Mojeek Search API page to obtain an API key With API key, open Open WebUI Admin panel and click Settings tab, and then click Web Search Enable Web search and Set Web Search Engine to mojeek Fill Mojeek Search API Key with the API key Click Save
+
+Please visit Mojeek Search API page to obtain an API key
+
+API key
+
+With API key, open Open WebUI Admin panel and click Settings tab, and then click Web Search
+
+API key
+
+Open WebUI Admin panel
+
+Settings
+
+Web Search
+
+Enable Web search and Set Web Search Engine to mojeek
+
+Web search
+
+Web Search Engine
+
+mojeek
+
+Fill Mojeek Search API Key with the API key
+
+Mojeek Search API Key
+
+API key
+
+Click Save
+
+Save
+
+Docker Compose Setup​
+
+Add the following environment variables to your Open WebUI docker-compose.yaml file:
+
+docker-compose.yaml
+
+services: open-webui: environment: ENABLE_RAG_WEB_SEARCH: True RAG_WEB_SEARCH_ENGINE: "mojeek" BRAVE_SEARCH_API_KEY: "YOUR_MOJEEK_API_KEY" RAG_WEB_SEARCH_RESULT_COUNT: 3 RAG_WEB_SEARCH_CONCURRENT_REQUESTS: 10
+
+services: open-webui: environment: ENABLE_RAG_WEB_SEARCH: True RAG_WEB_SEARCH_ENGINE: "mojeek" BRAVE_SEARCH_API_KEY: "YOUR_MOJEEK_API_KEY" RAG_WEB_SEARCH_RESULT_COUNT: 3 RAG_WEB_SEARCH_CONCURRENT_REQUESTS: 10

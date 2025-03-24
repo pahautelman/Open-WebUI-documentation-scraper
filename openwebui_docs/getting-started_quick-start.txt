@@ -1,0 +1,696 @@
+reference: https://docs.openwebui.com/getting-started/quick-start/
+title: ⏱️ Quick Start
+
+🚀 Getting Started⏱️ Quick Start
+
+🚀 Getting Started
+
+⏱️ Quick Start
+
+[Image: Open WebUI Pipelines]
+
+[Image: Open WebUI Pipelines]
+
+Admin Creation: The first account created on Open WebUI gains Administrator privileges, controlling user management and system settings. User Registrations: Subsequent sign-ups start with Pending status, requiring Administrator approval for access. Privacy and Data Security: All your data, including login details, is locally stored on your device. Open WebUI ensures strict confidentiality and no external requests for enhanced privacy and security. All models are private by default. Models must be explicitly shared via groups or by being made public. If a model is assigned to a group, only members of that group can see it. If a model is made public, anyone on the instance can see it.
+
+Admin Creation: The first account created on Open WebUI gains Administrator privileges, controlling user management and system settings.
+
+User Registrations: Subsequent sign-ups start with Pending status, requiring Administrator approval for access.
+
+Privacy and Data Security: All your data, including login details, is locally stored on your device. Open WebUI ensures strict confidentiality and no external requests for enhanced privacy and security. All models are private by default. Models must be explicitly shared via groups or by being made public. If a model is assigned to a group, only members of that group can see it. If a model is made public, anyone on the instance can see it.
+
+All models are private by default. Models must be explicitly shared via groups or by being made public. If a model is assigned to a group, only members of that group can see it. If a model is made public, anyone on the instance can see it.
+
+All models are private by default. Models must be explicitly shared via groups or by being made public. If a model is assigned to a group, only members of that group can see it. If a model is made public, anyone on the instance can see it.
+
+Choose your preferred installation method below:
+
+Docker: Officially supported and recommended for most users Python: Suitable for low-resource environments or those wanting a manual setup Kubernetes: Ideal for enterprise deployments that require scaling and orchestration
+
+Docker: Officially supported and recommended for most users
+
+Python: Suitable for low-resource environments or those wanting a manual setup
+
+Kubernetes: Ideal for enterprise deployments that require scaling and orchestration
+
+DockerPythonKubernetesThird Party
+
+Docker
+
+Python
+
+Kubernetes
+
+Third Party
+
+DockerDocker ComposePodmanDocker Swarm
+
+Docker
+
+Docker Compose
+
+Podman
+
+Docker Swarm
+
+Quick Start with Docker 🐳​
+
+Follow these steps to install Open WebUI with Docker.
+
+Step 1: Pull the Open WebUI Image​
+
+Start by pulling the latest Open WebUI Docker image from the GitHub Container Registry.
+
+docker pull ghcr.io/open-webui/open-webui:main
+
+docker pull ghcr.io/open-webui/open-webui:main
+
+Step 2: Run the Container​
+
+Run the container with default settings. This command includes a volume mapping to ensure persistent data storage.
+
+docker run -d -p 3000:8080 -v open-webui:/app/backend/data --name open-webui ghcr.io/open-webui/open-webui:main
+
+docker run -d -p 3000:8080 -v open-webui:/app/backend/data --name open-webui ghcr.io/open-webui/open-webui:main
+
+Important Flags​
+
+Volume Mapping (-v open-webui:/app/backend/data): Ensures persistent storage of your data. This prevents data loss between container restarts. Port Mapping (-p 3000:8080): Exposes the WebUI on port 3000 of your local machine.
+
+Volume Mapping (-v open-webui:/app/backend/data): Ensures persistent storage of your data. This prevents data loss between container restarts.
+
+-v open-webui:/app/backend/data
+
+Port Mapping (-p 3000:8080): Exposes the WebUI on port 3000 of your local machine.
+
+-p 3000:8080
+
+Using GPU Support​
+
+For Nvidia GPU support, add --gpus all to the docker run command:
+
+--gpus all
+
+docker run
+
+docker run -d -p 3000:8080 --gpus all -v open-webui:/app/backend/data --name open-webui ghcr.io/open-webui/open-webui:cuda
+
+docker run -d -p 3000:8080 --gpus all -v open-webui:/app/backend/data --name open-webui ghcr.io/open-webui/open-webui:cuda
+
+Single-User Mode (Disabling Login)​
+
+To bypass the login page for a single-user setup, set the WEBUI_AUTH environment variable to False:
+
+WEBUI_AUTH
+
+False
+
+docker run -d -p 3000:8080 -e WEBUI_AUTH=False -v open-webui:/app/backend/data --name open-webui ghcr.io/open-webui/open-webui:main
+
+docker run -d -p 3000:8080 -e WEBUI_AUTH=False -v open-webui:/app/backend/data --name open-webui ghcr.io/open-webui/open-webui:main
+
+You cannot switch between single-user mode and multi-account mode after this change.
+
+Advanced Configuration: Connecting to Ollama on a Different Server​
+
+To connect Open WebUI to an Ollama server located on another host, add the OLLAMA_BASE_URL environment variable:
+
+OLLAMA_BASE_URL
+
+docker run -d -p 3000:8080 -e OLLAMA_BASE_URL=https://example.com -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+
+docker run -d -p 3000:8080 -e OLLAMA_BASE_URL=https://example.com -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+
+Access the WebUI​
+
+After the container is running, access Open WebUI at:
+
+http://localhost:3000
+
+For detailed help on each Docker flag, see Docker's documentation.
+
+Updating​
+
+To update your local Docker installation to the latest version, you can either use Watchtower or manually update the container.
+
+Option 1: Using Watchtower​
+
+With Watchtower, you can automate the update process:
+
+docker run --rm --volume /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --run-once open-webui
+
+docker run --rm --volume /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --run-once open-webui
+
+(Replace open-webui with your container's name if it's different.)
+
+open-webui
+
+Option 2: Manual Update​
+
+Stop and remove the current container: docker rm -f open-webui Pull the latest version: docker pull ghcr.io/open-webui/open-webui:main Start the container again: docker run -d -p 3000:8080 -v open-webui:/app/backend/data --name open-webui ghcr.io/open-webui/open-webui:main
+
+Stop and remove the current container: docker rm -f open-webui
+
+Stop and remove the current container:
+
+docker rm -f open-webui
+
+docker rm -f open-webui
+
+Pull the latest version: docker pull ghcr.io/open-webui/open-webui:main
+
+Pull the latest version:
+
+docker pull ghcr.io/open-webui/open-webui:main
+
+docker pull ghcr.io/open-webui/open-webui:main
+
+Start the container again: docker run -d -p 3000:8080 -v open-webui:/app/backend/data --name open-webui ghcr.io/open-webui/open-webui:main
+
+Start the container again:
+
+docker run -d -p 3000:8080 -v open-webui:/app/backend/data --name open-webui ghcr.io/open-webui/open-webui:main
+
+docker run -d -p 3000:8080 -v open-webui:/app/backend/data --name open-webui ghcr.io/open-webui/open-webui:main
+
+Both methods will get your Docker instance updated and running with the latest build.
+
+Using Docker Compose simplifies the management of multi-container Docker applications.
+
+If you don't have Docker installed, check out our Docker installation tutorial.
+
+Docker Compose requires an additional package, docker-compose-v2.
+
+docker-compose-v2
+
+Warning: Older Docker Compose tutorials may reference version 1 syntax, which uses commands like docker-compose build. Ensure you use version 2 syntax, which uses commands like docker compose build (note the space instead of a hyphen).
+
+docker-compose build
+
+docker compose build
+
+Example docker-compose.yml​
+
+docker-compose.yml
+
+Here is an example configuration file for setting up Open WebUI with Docker Compose:
+
+version: '3'services: openwebui: image: ghcr.io/open-webui/open-webui:main ports: - "3000:8080" volumes: - open-webui:/app/backend/datavolumes: open-webui:
+
+version: '3'services: openwebui: image: ghcr.io/open-webui/open-webui:main ports: - "3000:8080" volumes: - open-webui:/app/backend/datavolumes: open-webui:
+
+Starting the Services​
+
+To start your services, run the following command:
+
+docker compose up -d
+
+docker compose up -d
+
+Helper Script​
+
+A useful helper script called run-compose.sh is included with the codebase. This script assists in choosing which Docker Compose files to include in your deployment, streamlining the setup process.
+
+run-compose.sh
+
+Note: For Nvidia GPU support, you change the image from ghcr.io/open-webui/open-webui:main to ghcr.io/open-webui/open-webui:cuda and add the following to your service definition in the docker-compose.yml file:
+
+ghcr.io/open-webui/open-webui:main
+
+ghcr.io/open-webui/open-webui:cuda
+
+docker-compose.yml
+
+deploy: resources: reservations: devices: - driver: nvidia count: all capabilities: [gpu]
+
+deploy: resources: reservations: devices: - driver: nvidia count: all capabilities: [gpu]
+
+This setup ensures that your application can leverage GPU resources when available.
+
+Podman is a daemonless container engine for developing, managing, and running OCI Containers.
+
+Basic Commands​
+
+Run a Container: podman run -d --name openwebui -p 3000:8080 ghcr.io/open-webui/open-webui:main List Running Containers: podman ps
+
+Run a Container: podman run -d --name openwebui -p 3000:8080 ghcr.io/open-webui/open-webui:main
+
+Run a Container:
+
+podman run -d --name openwebui -p 3000:8080 ghcr.io/open-webui/open-webui:main
+
+podman run -d --name openwebui -p 3000:8080 ghcr.io/open-webui/open-webui:main
+
+List Running Containers: podman ps
+
+List Running Containers:
+
+podman ps
+
+podman ps
+
+Networking with Podman​
+
+If networking issues arise, you may need to adjust your network settings:
+
+--network=slirp4netns:allow_host_loopback=true
+
+--network=slirp4netns:allow_host_loopback=true
+
+Refer to the Podman documentation for advanced configurations.
+
+Docker Swarm​
+
+This installation method requires knowledge on Docker Swarms, as it utilizes a stack file to deploy 3 seperate containers as services in a Docker Swarm.
+
+It includes isolated containers of ChromaDB, Ollama, and OpenWebUI. Additionally, there are pre-filled Environment Variables to further illustrate the setup.
+
+Choose the appropriate command based on your hardware setup:
+
+Before Starting: Directories for your volumes need to be created on the host, or you can specify a custom location or volume. The current example utilizes an isolated dir data, which is within the same dir as the docker-stack.yaml. For example: mkdir -p data/open-webui data/chromadb data/ollama With GPU Support: Docker-stack.yaml​ version: '3.9'services: openWebUI: image: ghcr.io/open-webui/open-webui:main depends_on: - chromadb - ollama volumes: - ./data/open-webui:/app/backend/data environment: DATA_DIR: /app/backend/data OLLAMA_BASE_URLS: http://ollama:11434 CHROMA_HTTP_PORT: 8000 CHROMA_HTTP_HOST: chromadb CHROMA_TENANT: default_tenant VECTOR_DB: chroma WEBUI_NAME: Awesome ChatBot CORS_ALLOW_ORIGIN: "*" # This is the current Default, will need to change before going live RAG_EMBEDDING_ENGINE: ollama RAG_EMBEDDING_MODEL: nomic-embed-text-v1.5 RAG_EMBEDDING_MODEL_TRUST_REMOTE_CODE: "True" ports: - target: 8080 published: 8080 mode: overlay deploy: replicas: 1 restart_policy: condition: any delay: 5s max_attempts: 3 chromadb: hostname: chromadb image: chromadb/chroma:0.5.15 volumes: - ./data/chromadb:/chroma/chroma environment: - IS_PERSISTENT=TRUE - ALLOW_RESET=TRUE - PERSIST_DIRECTORY=/chroma/chroma ports: - target: 8000 published: 8000 mode: overlay deploy: replicas: 1 restart_policy: condition: any delay: 5s max_attempts: 3 healthcheck: test: ["CMD-SHELL", "curl localhost:8000/api/v1/heartbeat || exit 1"] interval: 10s retries: 2 start_period: 5s timeout: 10s ollama: image: ollama/ollama:latest hostname: ollama ports: - target: 11434 published: 11434 mode: overlay deploy: resources: reservations: generic_resources: - discrete_resource_spec: kind: "NVIDIA-GPU" value: 0 replicas: 1 restart_policy: condition: any delay: 5s max_attempts: 3 volumes: - ./data/ollama:/root/.ollama Additional Requirements: Ensure CUDA is Enabled, follow your OS and GPU instructions for that. Enable Docker GPU support, see Nvidia Container Toolkit Follow the Guide here on configuring Docker Swarm to with with your GPU Ensure GPU Resource is enabled in /etc/nvidia-container-runtime/config.toml and enable GPU resource advertising by uncommenting the swarm-resource = "DOCKER_RESOURCE_GPU". The docker daemon must be restarted after updating these files on each node. With CPU Support: Modify the Ollama Service within docker-stack.yaml and remove the lines for generic_resources: ollama: image: ollama/ollama:latest hostname: ollama ports: - target: 11434 published: 11434 mode: overlay deploy: replicas: 1 restart_policy: condition: any delay: 5s max_attempts: 3 volumes: - ./data/ollama:/root/.ollama Deploy Docker Stack: docker stack deploy -c docker-stack.yaml -d super-awesome-ai
+
+Before Starting: Directories for your volumes need to be created on the host, or you can specify a custom location or volume. The current example utilizes an isolated dir data, which is within the same dir as the docker-stack.yaml. For example: mkdir -p data/open-webui data/chromadb data/ollama
+
+Before Starting:
+
+Directories for your volumes need to be created on the host, or you can specify a custom location or volume.
+
+The current example utilizes an isolated dir data, which is within the same dir as the docker-stack.yaml.
+
+data
+
+docker-stack.yaml
+
+For example: mkdir -p data/open-webui data/chromadb data/ollama
+
+For example: mkdir -p data/open-webui data/chromadb data/ollama
+
+For example:
+
+mkdir -p data/open-webui data/chromadb data/ollama
+
+mkdir -p data/open-webui data/chromadb data/ollama
+
+With GPU Support: Docker-stack.yaml​ version: '3.9'services: openWebUI: image: ghcr.io/open-webui/open-webui:main depends_on: - chromadb - ollama volumes: - ./data/open-webui:/app/backend/data environment: DATA_DIR: /app/backend/data OLLAMA_BASE_URLS: http://ollama:11434 CHROMA_HTTP_PORT: 8000 CHROMA_HTTP_HOST: chromadb CHROMA_TENANT: default_tenant VECTOR_DB: chroma WEBUI_NAME: Awesome ChatBot CORS_ALLOW_ORIGIN: "*" # This is the current Default, will need to change before going live RAG_EMBEDDING_ENGINE: ollama RAG_EMBEDDING_MODEL: nomic-embed-text-v1.5 RAG_EMBEDDING_MODEL_TRUST_REMOTE_CODE: "True" ports: - target: 8080 published: 8080 mode: overlay deploy: replicas: 1 restart_policy: condition: any delay: 5s max_attempts: 3 chromadb: hostname: chromadb image: chromadb/chroma:0.5.15 volumes: - ./data/chromadb:/chroma/chroma environment: - IS_PERSISTENT=TRUE - ALLOW_RESET=TRUE - PERSIST_DIRECTORY=/chroma/chroma ports: - target: 8000 published: 8000 mode: overlay deploy: replicas: 1 restart_policy: condition: any delay: 5s max_attempts: 3 healthcheck: test: ["CMD-SHELL", "curl localhost:8000/api/v1/heartbeat || exit 1"] interval: 10s retries: 2 start_period: 5s timeout: 10s ollama: image: ollama/ollama:latest hostname: ollama ports: - target: 11434 published: 11434 mode: overlay deploy: resources: reservations: generic_resources: - discrete_resource_spec: kind: "NVIDIA-GPU" value: 0 replicas: 1 restart_policy: condition: any delay: 5s max_attempts: 3 volumes: - ./data/ollama:/root/.ollama Additional Requirements: Ensure CUDA is Enabled, follow your OS and GPU instructions for that. Enable Docker GPU support, see Nvidia Container Toolkit Follow the Guide here on configuring Docker Swarm to with with your GPU Ensure GPU Resource is enabled in /etc/nvidia-container-runtime/config.toml and enable GPU resource advertising by uncommenting the swarm-resource = "DOCKER_RESOURCE_GPU". The docker daemon must be restarted after updating these files on each node.
+
+With GPU Support:
+
+Docker-stack.yaml​
+
+version: '3.9'services: openWebUI: image: ghcr.io/open-webui/open-webui:main depends_on: - chromadb - ollama volumes: - ./data/open-webui:/app/backend/data environment: DATA_DIR: /app/backend/data OLLAMA_BASE_URLS: http://ollama:11434 CHROMA_HTTP_PORT: 8000 CHROMA_HTTP_HOST: chromadb CHROMA_TENANT: default_tenant VECTOR_DB: chroma WEBUI_NAME: Awesome ChatBot CORS_ALLOW_ORIGIN: "*" # This is the current Default, will need to change before going live RAG_EMBEDDING_ENGINE: ollama RAG_EMBEDDING_MODEL: nomic-embed-text-v1.5 RAG_EMBEDDING_MODEL_TRUST_REMOTE_CODE: "True" ports: - target: 8080 published: 8080 mode: overlay deploy: replicas: 1 restart_policy: condition: any delay: 5s max_attempts: 3 chromadb: hostname: chromadb image: chromadb/chroma:0.5.15 volumes: - ./data/chromadb:/chroma/chroma environment: - IS_PERSISTENT=TRUE - ALLOW_RESET=TRUE - PERSIST_DIRECTORY=/chroma/chroma ports: - target: 8000 published: 8000 mode: overlay deploy: replicas: 1 restart_policy: condition: any delay: 5s max_attempts: 3 healthcheck: test: ["CMD-SHELL", "curl localhost:8000/api/v1/heartbeat || exit 1"] interval: 10s retries: 2 start_period: 5s timeout: 10s ollama: image: ollama/ollama:latest hostname: ollama ports: - target: 11434 published: 11434 mode: overlay deploy: resources: reservations: generic_resources: - discrete_resource_spec: kind: "NVIDIA-GPU" value: 0 replicas: 1 restart_policy: condition: any delay: 5s max_attempts: 3 volumes: - ./data/ollama:/root/.ollama
+
+version: '3.9'services: openWebUI: image: ghcr.io/open-webui/open-webui:main depends_on: - chromadb - ollama volumes: - ./data/open-webui:/app/backend/data environment: DATA_DIR: /app/backend/data OLLAMA_BASE_URLS: http://ollama:11434 CHROMA_HTTP_PORT: 8000 CHROMA_HTTP_HOST: chromadb CHROMA_TENANT: default_tenant VECTOR_DB: chroma WEBUI_NAME: Awesome ChatBot CORS_ALLOW_ORIGIN: "*" # This is the current Default, will need to change before going live RAG_EMBEDDING_ENGINE: ollama RAG_EMBEDDING_MODEL: nomic-embed-text-v1.5 RAG_EMBEDDING_MODEL_TRUST_REMOTE_CODE: "True" ports: - target: 8080 published: 8080 mode: overlay deploy: replicas: 1 restart_policy: condition: any delay: 5s max_attempts: 3 chromadb: hostname: chromadb image: chromadb/chroma:0.5.15 volumes: - ./data/chromadb:/chroma/chroma environment: - IS_PERSISTENT=TRUE - ALLOW_RESET=TRUE - PERSIST_DIRECTORY=/chroma/chroma ports: - target: 8000 published: 8000 mode: overlay deploy: replicas: 1 restart_policy: condition: any delay: 5s max_attempts: 3 healthcheck: test: ["CMD-SHELL", "curl localhost:8000/api/v1/heartbeat || exit 1"] interval: 10s retries: 2 start_period: 5s timeout: 10s ollama: image: ollama/ollama:latest hostname: ollama ports: - target: 11434 published: 11434 mode: overlay deploy: resources: reservations: generic_resources: - discrete_resource_spec: kind: "NVIDIA-GPU" value: 0 replicas: 1 restart_policy: condition: any delay: 5s max_attempts: 3 volumes: - ./data/ollama:/root/.ollama
+
+Additional Requirements: Ensure CUDA is Enabled, follow your OS and GPU instructions for that. Enable Docker GPU support, see Nvidia Container Toolkit Follow the Guide here on configuring Docker Swarm to with with your GPU Ensure GPU Resource is enabled in /etc/nvidia-container-runtime/config.toml and enable GPU resource advertising by uncommenting the swarm-resource = "DOCKER_RESOURCE_GPU". The docker daemon must be restarted after updating these files on each node.
+
+Additional Requirements: Ensure CUDA is Enabled, follow your OS and GPU instructions for that. Enable Docker GPU support, see Nvidia Container Toolkit Follow the Guide here on configuring Docker Swarm to with with your GPU Ensure GPU Resource is enabled in /etc/nvidia-container-runtime/config.toml and enable GPU resource advertising by uncommenting the swarm-resource = "DOCKER_RESOURCE_GPU". The docker daemon must be restarted after updating these files on each node.
+
+Additional Requirements:
+
+Ensure CUDA is Enabled, follow your OS and GPU instructions for that. Enable Docker GPU support, see Nvidia Container Toolkit Follow the Guide here on configuring Docker Swarm to with with your GPU
+
+Ensure CUDA is Enabled, follow your OS and GPU instructions for that.
+
+Enable Docker GPU support, see Nvidia Container Toolkit
+
+Follow the Guide here on configuring Docker Swarm to with with your GPU
+
+Ensure GPU Resource is enabled in /etc/nvidia-container-runtime/config.toml and enable GPU resource advertising by uncommenting the swarm-resource = "DOCKER_RESOURCE_GPU". The docker daemon must be restarted after updating these files on each node.
+
+Ensure GPU Resource is enabled in /etc/nvidia-container-runtime/config.toml and enable GPU resource advertising by uncommenting the swarm-resource = "DOCKER_RESOURCE_GPU". The docker daemon must be restarted after updating these files on each node.
+
+/etc/nvidia-container-runtime/config.toml
+
+swarm-resource = "DOCKER_RESOURCE_GPU"
+
+With CPU Support: Modify the Ollama Service within docker-stack.yaml and remove the lines for generic_resources: ollama: image: ollama/ollama:latest hostname: ollama ports: - target: 11434 published: 11434 mode: overlay deploy: replicas: 1 restart_policy: condition: any delay: 5s max_attempts: 3 volumes: - ./data/ollama:/root/.ollama
+
+With CPU Support:
+
+Modify the Ollama Service within docker-stack.yaml and remove the lines for generic_resources:
+
+docker-stack.yaml
+
+generic_resources:
+
+ollama: image: ollama/ollama:latest hostname: ollama ports: - target: 11434 published: 11434 mode: overlay deploy: replicas: 1 restart_policy: condition: any delay: 5s max_attempts: 3 volumes: - ./data/ollama:/root/.ollama
+
+ollama: image: ollama/ollama:latest hostname: ollama ports: - target: 11434 published: 11434 mode: overlay deploy: replicas: 1 restart_policy: condition: any delay: 5s max_attempts: 3 volumes: - ./data/ollama:/root/.ollama
+
+Deploy Docker Stack: docker stack deploy -c docker-stack.yaml -d super-awesome-ai
+
+Deploy Docker Stack:
+
+docker stack deploy -c docker-stack.yaml -d super-awesome-ai
+
+docker stack deploy -c docker-stack.yaml -d super-awesome-ai
+
+uvCondaVenvDevelopment
+
+uv
+
+Conda
+
+Venv
+
+Development
+
+Installation with uv​
+
+uv
+
+The uv runtime manager ensures seamless Python environment management for applications like Open WebUI. Follow these steps to get started:
+
+uv
+
+1. Install uv​
+
+uv
+
+Pick the appropriate installation command for your operating system:
+
+macOS/Linux: curl -LsSf https://astral.sh/uv/install.sh | sh Windows: powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+
+macOS/Linux: curl -LsSf https://astral.sh/uv/install.sh | sh
+
+macOS/Linux:
+
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+Windows: powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+
+Windows:
+
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+
+2. Run Open WebUI​
+
+Once uv is installed, running Open WebUI is a breeze. Use the command below, ensuring to set the DATA_DIR environment variable to avoid data loss. Example paths are provided for each platform:
+
+uv
+
+DATA_DIR
+
+macOS/Linux: DATA_DIR=~/.open-webui uvx --python 3.11 open-webui@latest serve Windows: $env:DATA_DIR="C:\open-webui\data"; uvx --python 3.11 open-webui@latest serve
+
+macOS/Linux: DATA_DIR=~/.open-webui uvx --python 3.11 open-webui@latest serve
+
+macOS/Linux:
+
+DATA_DIR=~/.open-webui uvx --python 3.11 open-webui@latest serve
+
+DATA_DIR=~/.open-webui uvx --python 3.11 open-webui@latest serve
+
+Windows: $env:DATA_DIR="C:\open-webui\data"; uvx --python 3.11 open-webui@latest serve
+
+Windows:
+
+$env:DATA_DIR="C:\open-webui\data"; uvx --python 3.11 open-webui@latest serve
+
+$env:DATA_DIR="C:\open-webui\data"; uvx --python 3.11 open-webui@latest serve
+
+To update your locally installed Open-WebUI package to the latest version using pip, follow these simple steps:
+
+pip
+
+pip install -U open-webui
+
+pip install -U open-webui
+
+The -U (or --upgrade) flag ensures that pip upgrades the package to the latest available version.
+
+-U
+
+--upgrade
+
+pip
+
+That's it! Your Open-WebUI package is now updated and ready to use.
+
+Create a Conda Environment: conda create -n open-webui python=3.11 Activate the Environment: conda activate open-webui Install Open WebUI: pip install open-webui Start the Server: open-webui serve
+
+Create a Conda Environment: conda create -n open-webui python=3.11
+
+Create a Conda Environment:
+
+conda create -n open-webui python=3.11
+
+conda create -n open-webui python=3.11
+
+Activate the Environment: conda activate open-webui
+
+Activate the Environment:
+
+conda activate open-webui
+
+conda activate open-webui
+
+Install Open WebUI: pip install open-webui
+
+Install Open WebUI:
+
+pip install open-webui
+
+pip install open-webui
+
+Start the Server: open-webui serve
+
+Start the Server:
+
+open-webui serve
+
+open-webui serve
+
+To update your locally installed Open-WebUI package to the latest version using pip, follow these simple steps:
+
+pip
+
+pip install -U open-webui
+
+pip install -U open-webui
+
+The -U (or --upgrade) flag ensures that pip upgrades the package to the latest available version.
+
+-U
+
+--upgrade
+
+pip
+
+That's it! Your Open-WebUI package is now updated and ready to use.
+
+Create isolated Python environments using venv.
+
+venv
+
+Steps​
+
+Create a Virtual Environment: python3 -m venv venv Activate the Virtual Environment: On Linux/macOS: source venv/bin/activate On Windows: venv\Scripts\activate Install Open WebUI: pip install open-webui Start the Server: open-webui serve
+
+Create a Virtual Environment: python3 -m venv venv
+
+Create a Virtual Environment:
+
+python3 -m venv venv
+
+python3 -m venv venv
+
+Activate the Virtual Environment: On Linux/macOS: source venv/bin/activate On Windows: venv\Scripts\activate
+
+Activate the Virtual Environment:
+
+On Linux/macOS: source venv/bin/activate On Windows: venv\Scripts\activate
+
+On Linux/macOS: source venv/bin/activate
+
+On Linux/macOS:
+
+source venv/bin/activate
+
+source venv/bin/activate
+
+On Windows: venv\Scripts\activate
+
+On Windows:
+
+venv\Scripts\activate
+
+venv\Scripts\activate
+
+Install Open WebUI: pip install open-webui
+
+Install Open WebUI:
+
+pip install open-webui
+
+pip install open-webui
+
+Start the Server: open-webui serve
+
+Start the Server:
+
+open-webui serve
+
+open-webui serve
+
+To update your locally installed Open-WebUI package to the latest version using pip, follow these simple steps:
+
+pip
+
+pip install -U open-webui
+
+pip install -U open-webui
+
+The -U (or --upgrade) flag ensures that pip upgrades the package to the latest available version.
+
+-U
+
+--upgrade
+
+pip
+
+That's it! Your Open-WebUI package is now updated and ready to use.
+
+Development Setup
+
+For developers who want to contribute, check the Development Guide in Advanced Topics.
+
+For developers who want to contribute, check the Development Guide in Advanced Topics.
+
+HelmKustomize
+
+Helm
+
+Kustomize
+
+Helm helps you manage Kubernetes applications.
+
+Prerequisites​
+
+Kubernetes cluster is set up. Helm is installed.
+
+Kubernetes cluster is set up.
+
+Helm is installed.
+
+Steps​
+
+Add Open WebUI Helm Repository: helm repo add open-webui https://open-webui.github.io/helm-chartshelm repo update Install Open WebUI Chart: helm install openwebui open-webui/open-webui Verify Installation: kubectl get pods
+
+Add Open WebUI Helm Repository: helm repo add open-webui https://open-webui.github.io/helm-chartshelm repo update
+
+Add Open WebUI Helm Repository:
+
+helm repo add open-webui https://open-webui.github.io/helm-chartshelm repo update
+
+helm repo add open-webui https://open-webui.github.io/helm-chartshelm repo update
+
+Install Open WebUI Chart: helm install openwebui open-webui/open-webui
+
+Install Open WebUI Chart:
+
+helm install openwebui open-webui/open-webui
+
+helm install openwebui open-webui/open-webui
+
+Verify Installation: kubectl get pods
+
+Verify Installation:
+
+kubectl get pods
+
+kubectl get pods
+
+Access the WebUI​
+
+Set up port forwarding or load balancing to access Open WebUI from outside the cluster.
+
+Kustomize allows you to customize Kubernetes YAML configurations.
+
+Prerequisites​
+
+Kubernetes cluster is set up. Kustomize is installed.
+
+Kubernetes cluster is set up.
+
+Kustomize is installed.
+
+Steps​
+
+Clone the Open WebUI Manifests: git clone https://github.com/open-webui/k8s-manifests.gitcd k8s-manifests Apply the Manifests: kubectl apply -k . Verify Installation: kubectl get pods
+
+Clone the Open WebUI Manifests: git clone https://github.com/open-webui/k8s-manifests.gitcd k8s-manifests
+
+Clone the Open WebUI Manifests:
+
+git clone https://github.com/open-webui/k8s-manifests.gitcd k8s-manifests
+
+git clone https://github.com/open-webui/k8s-manifests.gitcd k8s-manifests
+
+Apply the Manifests: kubectl apply -k .
+
+Apply the Manifests:
+
+kubectl apply -k .
+
+kubectl apply -k .
+
+Verify Installation: kubectl get pods
+
+Verify Installation:
+
+kubectl get pods
+
+kubectl get pods
+
+Access the WebUI​
+
+Set up port forwarding or load balancing to access Open WebUI from outside the cluster.
+
+Pinokio.computer
+
+Pinokio.computer
+
+Pinokio.computer Installation​
+
+For installation via Pinokio.computer, please visit their website:
+
+https://pinokio.computer/
+
+Support for this installation method is provided through their website.
+
+Additional Third-Party Integrations​
+
+(Add information about third-party integrations as they become available.)
+
+Next Steps​
+
+After installing, visit:
+
+http://localhost:3000 to access Open WebUI. or http://localhost:8080/ when using a Python deployment.
+
+http://localhost:3000 to access Open WebUI.
+
+or http://localhost:8080/ when using a Python deployment.
+
+You are now ready to start using Open WebUI!
+
+Using Open WebUI with Ollama​
+
+If you're using Open WebUI with Ollama, be sure to check out our Starting with Ollama Guide to learn how to manage your Ollama instances with Open WebUI.
+
+Join the Community​
+
+Need help? Have questions? Join our community:
+
+Open WebUI Discord GitHub Issues
+
+Open WebUI Discord
+
+GitHub Issues
+
+Stay updated with the latest features, troubleshooting tips, and announcements!

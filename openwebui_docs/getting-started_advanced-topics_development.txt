@@ -1,0 +1,170 @@
+reference: https://docs.openwebui.com/getting-started/advanced-topics/development
+title: 🛠️ Development Guide
+
+🚀 Getting Started📚 Advanced Topics🛠️ Development Guide
+
+🚀 Getting Started
+
+📚 Advanced Topics
+
+🛠️ Development Guide
+
+Welcome to the Open WebUI Development Setup Guide! Whether you're a novice or an experienced developer, this guide will help you set up a local development environment for both the frontend and backend components. Let’s dive in! 🚀
+
+System Requirements​
+
+Operating System: Linux (or WSL on Windows) or macOS Python Version: Python 3.11+ Node.js Version: 22.10+
+
+Operating System: Linux (or WSL on Windows) or macOS
+
+Python Version: Python 3.11+
+
+Node.js Version: 22.10+
+
+Development Methods​
+
+🐧 Local Development Setup​
+
+Clone the Repository: git clone https://github.com/open-webui/open-webui.gitcd open-webui Frontend Setup: Create a .env file: cp -RPp .env.example .env Install dependencies: npm install Start the frontend server: npm run dev 🌐 Available at: http://localhost:5173. Backend Setup: Navigate to the backend: cd backend Use Conda for environment setup: conda create --name open-webui python=3.11conda activate open-webui Install dependencies: pip install -r requirements.txt -U Start the backend: sh dev.sh 📄 API docs available at: http://localhost:8080/docs.
+
+Clone the Repository: git clone https://github.com/open-webui/open-webui.gitcd open-webui
+
+Clone the Repository:
+
+git clone https://github.com/open-webui/open-webui.gitcd open-webui
+
+git clone https://github.com/open-webui/open-webui.gitcd open-webui
+
+Frontend Setup: Create a .env file: cp -RPp .env.example .env Install dependencies: npm install Start the frontend server: npm run dev 🌐 Available at: http://localhost:5173.
+
+Frontend Setup:
+
+Create a .env file: cp -RPp .env.example .env Install dependencies: npm install Start the frontend server: npm run dev 🌐 Available at: http://localhost:5173.
+
+Create a .env file: cp -RPp .env.example .env
+
+Create a .env file:
+
+.env
+
+cp -RPp .env.example .env
+
+cp -RPp .env.example .env
+
+Install dependencies: npm install
+
+Install dependencies:
+
+npm install
+
+npm install
+
+Start the frontend server: npm run dev 🌐 Available at: http://localhost:5173.
+
+Start the frontend server:
+
+npm run dev
+
+npm run dev
+
+🌐 Available at: http://localhost:5173.
+
+Backend Setup: Navigate to the backend: cd backend Use Conda for environment setup: conda create --name open-webui python=3.11conda activate open-webui Install dependencies: pip install -r requirements.txt -U Start the backend: sh dev.sh 📄 API docs available at: http://localhost:8080/docs.
+
+Backend Setup:
+
+Navigate to the backend: cd backend Use Conda for environment setup: conda create --name open-webui python=3.11conda activate open-webui Install dependencies: pip install -r requirements.txt -U Start the backend: sh dev.sh 📄 API docs available at: http://localhost:8080/docs.
+
+Navigate to the backend: cd backend
+
+Navigate to the backend:
+
+cd backend
+
+cd backend
+
+Use Conda for environment setup: conda create --name open-webui python=3.11conda activate open-webui
+
+Use Conda for environment setup:
+
+conda create --name open-webui python=3.11conda activate open-webui
+
+conda create --name open-webui python=3.11conda activate open-webui
+
+Install dependencies: pip install -r requirements.txt -U
+
+Install dependencies:
+
+pip install -r requirements.txt -U
+
+pip install -r requirements.txt -U
+
+Start the backend: sh dev.sh 📄 API docs available at: http://localhost:8080/docs.
+
+Start the backend:
+
+sh dev.sh
+
+sh dev.sh
+
+📄 API docs available at: http://localhost:8080/docs.
+
+🐛 Troubleshooting​
+
+FATAL ERROR: Reached Heap Limit​
+
+If you encounter memory-related errors during the build, increase the Node.js heap size:
+
+Modify Dockerfile: ENV NODE_OPTIONS=--max-old-space-size=4096 Allocate at least 4 GB of RAM to Node.js.
+
+Modify Dockerfile: ENV NODE_OPTIONS=--max-old-space-size=4096
+
+Modify Dockerfile:
+
+ENV NODE_OPTIONS=--max-old-space-size=4096
+
+ENV NODE_OPTIONS=--max-old-space-size=4096
+
+Allocate at least 4 GB of RAM to Node.js.
+
+Allocate at least 4 GB of RAM to Node.js.
+
+Other Issues​
+
+Port Conflicts: Ensure that no other processes are using ports 8080 or 5173. Hot Reload Not Working: Verify that watch mode is enabled for both frontend and backend.
+
+Port Conflicts: Ensure that no other processes are using ports 8080 or 5173.
+
+Port Conflicts: Ensure that no other processes are using ports 8080 or 5173.
+
+Hot Reload Not Working: Verify that watch mode is enabled for both frontend and backend.
+
+Hot Reload Not Working: Verify that watch mode is enabled for both frontend and backend.
+
+Contributing to Open WebUI​
+
+Local Workflow​
+
+Commit Changes Regularly to track progress. Sync with the Main Branch to avoid conflicts: git pull origin main Run Tests Before Pushing: npm run test
+
+Commit Changes Regularly to track progress.
+
+Commit Changes Regularly to track progress.
+
+Sync with the Main Branch to avoid conflicts: git pull origin main
+
+Sync with the Main Branch to avoid conflicts:
+
+git pull origin main
+
+git pull origin main
+
+Run Tests Before Pushing: npm run test
+
+Run Tests Before Pushing:
+
+npm run test
+
+npm run test
+
+Happy coding! 🎉

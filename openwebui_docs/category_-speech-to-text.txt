@@ -1,0 +1,10 @@
+reference: https://docs.openwebui.com/category/-speech-to-text
+title: 
+
+📄️ 🗨️ Configuration
+
+Open Web UI supports both local, browser, and remote speech to text.
+
+📄️ Environment Variables
+
+For a complete list of all Open WebUI environment variables, see the Environment Variable Configuration page.

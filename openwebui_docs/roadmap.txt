@@ -1,0 +1,114 @@
+reference: https://docs.openwebui.com/roadmap
+title: 🛣️ Roadmap
+
+🛣️ Roadmap
+
+🛣️ Roadmap
+
+[Image: Dave Waring]
+
+[Image: Dave Waring]
+
+At Open WebUI, we're committed to continually enhancing our platform to provide the best experience for our users. Below, you'll find the structured roadmap for our ongoing and future developments, categorized into Interface, Information Retrieval, and Community.
+
+Interface 🖥️​
+
+Our roadmap for interface innovations aims to create a highly intuitive and accessible platform. These will not only improves user satisfaction but also enhance productivity by reducing the cognitive load on users.
+
+🔗 ReACT Tool Calling Support: The platform will implement ReACT (Reasoning + Acting) for on-the-fly tool function calling, enabling models to dynamically interact with external tools in real-time during conversations. This advanced capability will make workflows more interactive and efficient, streamlining problem-solving within the ecosystem. 📜 MCP (Model Context Protocol) Tools Support: Introducing support for the MCP framework to establish seamless communication and context tracking across interconnected AI systems and modules. This ensures that context is preserved, workflows are maintained, and tools function cohesively, reducing the need for manual intervention or reinitialization. 📦 Packaged Single Binary Executable: Simplifying deployment and ensuring compatibility across different platforms, we aim to offer our interface as a single binary executable. This approach will facilitate effortless installation and updates, significantly enhancing usability for all users, especially those with limited technical expertise. 👤 User Page: A personal User Page feature where users can create posts. The functionality will also include features like followers, likes, and comments. This allows users to effectively share their model configurations, prompts, and files with a broader community, creating a richer, more connected ecosystem around the platform. 📝 AI Powered Notes: Inspired by tools like Notion and Obsidian, we plan to introduce a robust note-taking feature that includes AI integration. From simple note-taking to full-fledged document creation, this tool will offer a seamless experience, all locally integrated within the platform. 📈 Advanced User Tracking and Cost Management Tools: Users will gain access to comprehensive tools designed for tracking application performance and user activities, as well as managing costs effectively. These tools will empower users with the data they need to make informed decisions, improve user experiences, and maintain budget control, optimizing the use of resources across their AI applications. 🧠 AI Workflow Tool: A node-based tool to orchestrate and compose multiple aspects of AI systems. This tool will allow users to visually connect different AI modules and services, creating complex workflows with ease. It's designed to empower users to harness the full potential of AI without needing deep technical knowledge in AI programming. 🔊 Local Text-to-Speech Integration: This feature will allow natural language processing to convert text into lifelike spoken audio, thus making the platform more accessible, especially for visually impaired users. This integration helps in consuming information without screen interaction, facilitating multitasking and improving user engagement. 📣 Wakeword Detection: Incorporating hands-free operation through voice commands will not only enhance accessibility but also align with emerging trends in IoT and smart environments, making our platform future-ready. 💻 Better Code Execution: Enhancing coding functionalities within the platform supports a broad range of development activities, making it a one-stop solution for developers, thereby attracting a wider tech audience and fostering a robust developer community. 🤖 Code Interpreter Function: A flexible code interpreter embedded into the platform can support multiple programming languages, which reduces the dependency on external tools and streamlines the development process, increasing efficiency. 🔧 Streamlined Fine-tune Support: Open WebUI will offer a seamless fine-tuning process by allowing users to automatically build a fine-tune dataset simply by using the interface and rating the responses. We will provide Python notebooks to help preprocess your dataset, making it ready for fine-tuning directly from the notebook. This approach will be super simple and elegantly integrates fine-tuning into user workflows.
+
+🔗 ReACT Tool Calling Support: The platform will implement ReACT (Reasoning + Acting) for on-the-fly tool function calling, enabling models to dynamically interact with external tools in real-time during conversations. This advanced capability will make workflows more interactive and efficient, streamlining problem-solving within the ecosystem.
+
+🔗 ReACT Tool Calling Support: The platform will implement ReACT (Reasoning + Acting) for on-the-fly tool function calling, enabling models to dynamically interact with external tools in real-time during conversations. This advanced capability will make workflows more interactive and efficient, streamlining problem-solving within the ecosystem.
+
+📜 MCP (Model Context Protocol) Tools Support: Introducing support for the MCP framework to establish seamless communication and context tracking across interconnected AI systems and modules. This ensures that context is preserved, workflows are maintained, and tools function cohesively, reducing the need for manual intervention or reinitialization.
+
+📜 MCP (Model Context Protocol) Tools Support: Introducing support for the MCP framework to establish seamless communication and context tracking across interconnected AI systems and modules. This ensures that context is preserved, workflows are maintained, and tools function cohesively, reducing the need for manual intervention or reinitialization.
+
+📦 Packaged Single Binary Executable: Simplifying deployment and ensuring compatibility across different platforms, we aim to offer our interface as a single binary executable. This approach will facilitate effortless installation and updates, significantly enhancing usability for all users, especially those with limited technical expertise.
+
+📦 Packaged Single Binary Executable: Simplifying deployment and ensuring compatibility across different platforms, we aim to offer our interface as a single binary executable. This approach will facilitate effortless installation and updates, significantly enhancing usability for all users, especially those with limited technical expertise.
+
+👤 User Page: A personal User Page feature where users can create posts. The functionality will also include features like followers, likes, and comments. This allows users to effectively share their model configurations, prompts, and files with a broader community, creating a richer, more connected ecosystem around the platform.
+
+👤 User Page: A personal User Page feature where users can create posts. The functionality will also include features like followers, likes, and comments. This allows users to effectively share their model configurations, prompts, and files with a broader community, creating a richer, more connected ecosystem around the platform.
+
+📝 AI Powered Notes: Inspired by tools like Notion and Obsidian, we plan to introduce a robust note-taking feature that includes AI integration. From simple note-taking to full-fledged document creation, this tool will offer a seamless experience, all locally integrated within the platform.
+
+📝 AI Powered Notes: Inspired by tools like Notion and Obsidian, we plan to introduce a robust note-taking feature that includes AI integration. From simple note-taking to full-fledged document creation, this tool will offer a seamless experience, all locally integrated within the platform.
+
+📈 Advanced User Tracking and Cost Management Tools: Users will gain access to comprehensive tools designed for tracking application performance and user activities, as well as managing costs effectively. These tools will empower users with the data they need to make informed decisions, improve user experiences, and maintain budget control, optimizing the use of resources across their AI applications.
+
+📈 Advanced User Tracking and Cost Management Tools: Users will gain access to comprehensive tools designed for tracking application performance and user activities, as well as managing costs effectively. These tools will empower users with the data they need to make informed decisions, improve user experiences, and maintain budget control, optimizing the use of resources across their AI applications.
+
+🧠 AI Workflow Tool: A node-based tool to orchestrate and compose multiple aspects of AI systems. This tool will allow users to visually connect different AI modules and services, creating complex workflows with ease. It's designed to empower users to harness the full potential of AI without needing deep technical knowledge in AI programming.
+
+🧠 AI Workflow Tool: A node-based tool to orchestrate and compose multiple aspects of AI systems. This tool will allow users to visually connect different AI modules and services, creating complex workflows with ease. It's designed to empower users to harness the full potential of AI without needing deep technical knowledge in AI programming.
+
+🔊 Local Text-to-Speech Integration: This feature will allow natural language processing to convert text into lifelike spoken audio, thus making the platform more accessible, especially for visually impaired users. This integration helps in consuming information without screen interaction, facilitating multitasking and improving user engagement.
+
+🔊 Local Text-to-Speech Integration: This feature will allow natural language processing to convert text into lifelike spoken audio, thus making the platform more accessible, especially for visually impaired users. This integration helps in consuming information without screen interaction, facilitating multitasking and improving user engagement.
+
+📣 Wakeword Detection: Incorporating hands-free operation through voice commands will not only enhance accessibility but also align with emerging trends in IoT and smart environments, making our platform future-ready.
+
+📣 Wakeword Detection: Incorporating hands-free operation through voice commands will not only enhance accessibility but also align with emerging trends in IoT and smart environments, making our platform future-ready.
+
+💻 Better Code Execution: Enhancing coding functionalities within the platform supports a broad range of development activities, making it a one-stop solution for developers, thereby attracting a wider tech audience and fostering a robust developer community.
+
+💻 Better Code Execution: Enhancing coding functionalities within the platform supports a broad range of development activities, making it a one-stop solution for developers, thereby attracting a wider tech audience and fostering a robust developer community.
+
+🤖 Code Interpreter Function: A flexible code interpreter embedded into the platform can support multiple programming languages, which reduces the dependency on external tools and streamlines the development process, increasing efficiency.
+
+🤖 Code Interpreter Function: A flexible code interpreter embedded into the platform can support multiple programming languages, which reduces the dependency on external tools and streamlines the development process, increasing efficiency.
+
+🔧 Streamlined Fine-tune Support: Open WebUI will offer a seamless fine-tuning process by allowing users to automatically build a fine-tune dataset simply by using the interface and rating the responses. We will provide Python notebooks to help preprocess your dataset, making it ready for fine-tuning directly from the notebook. This approach will be super simple and elegantly integrates fine-tuning into user workflows.
+
+🔧 Streamlined Fine-tune Support: Open WebUI will offer a seamless fine-tuning process by allowing users to automatically build a fine-tune dataset simply by using the interface and rating the responses. We will provide Python notebooks to help preprocess your dataset, making it ready for fine-tuning directly from the notebook. This approach will be super simple and elegantly integrates fine-tuning into user workflows.
+
+Information Retrieval (RAG) 📚​
+
+Open WebUI currently provides an interface that enables the use of existing information retrieval (IR) models efficiency. However, we believe there is vast potential for improvement. We fully recognize the limitations of our current RAG (Retrieval-Augmented Generation) implementation in our WebUI, understanding that a one-size-fits-all approach does not effectively meet all users' needs.
+
+To address this, we are committed to transforming our framework to be highly modular and extensively configurable. This new direction will enable users to tailor the information retrieval process to their specific requirements with ease, using a straightforward, interactive interface that allows for simple drag-and-drop customization. This refinement aims to significantly enhance user experience by providing a more adaptable and personalized IR setup.
+
+Here's our focused plan for advancing our information retrieval capabilities:
+
+🌐 Customizable RAG Framework: Envision a future where you can effortlessly tailor your IR setup via a user-friendly interface. This will include modular components that users can drag, drop, and configure without needing deep technical knowledge. 🔄 Advanced Integration with SoTA Methods: We aim to incorporate the latest developments in retrieval methods, enhancing accuracy and efficiency with advanced techniques and architectures. 🔍 Dedicated R&D: We’re scaling up our research and development to discover and integrate novel retrieval methods that push the boundaries of current methods, in collaboration with leading research entities.
+
+🌐 Customizable RAG Framework: Envision a future where you can effortlessly tailor your IR setup via a user-friendly interface. This will include modular components that users can drag, drop, and configure without needing deep technical knowledge.
+
+🌐 Customizable RAG Framework: Envision a future where you can effortlessly tailor your IR setup via a user-friendly interface. This will include modular components that users can drag, drop, and configure without needing deep technical knowledge.
+
+🔄 Advanced Integration with SoTA Methods: We aim to incorporate the latest developments in retrieval methods, enhancing accuracy and efficiency with advanced techniques and architectures.
+
+🔄 Advanced Integration with SoTA Methods: We aim to incorporate the latest developments in retrieval methods, enhancing accuracy and efficiency with advanced techniques and architectures.
+
+🔍 Dedicated R&D: We’re scaling up our research and development to discover and integrate novel retrieval methods that push the boundaries of current methods, in collaboration with leading research entities.
+
+🔍 Dedicated R&D: We’re scaling up our research and development to discover and integrate novel retrieval methods that push the boundaries of current methods, in collaboration with leading research entities.
+
+Community 🤝​
+
+We aim to create a vibrant community where everyone can contribute to and benefit from shared knowledge and developments:
+
+🏆 LLM Leaderboard: A community-driven approach to evaluate and rank models ensures transparency and continuous improvement, leveraging real-world applications to benchmark performance instead of relying on standard datasets that might not reflect practical utility. 👥 Sub-Communities: Encouraging niche communities to curate datasets and optimize prompts can lead to better-tuned models, as these communities have specific insights and detailed feedback that typically go unnoticed in broader datasets.
+
+🏆 LLM Leaderboard: A community-driven approach to evaluate and rank models ensures transparency and continuous improvement, leveraging real-world applications to benchmark performance instead of relying on standard datasets that might not reflect practical utility.
+
+🏆 LLM Leaderboard: A community-driven approach to evaluate and rank models ensures transparency and continuous improvement, leveraging real-world applications to benchmark performance instead of relying on standard datasets that might not reflect practical utility.
+
+👥 Sub-Communities: Encouraging niche communities to curate datasets and optimize prompts can lead to better-tuned models, as these communities have specific insights and detailed feedback that typically go unnoticed in broader datasets.
+
+👥 Sub-Communities: Encouraging niche communities to curate datasets and optimize prompts can lead to better-tuned models, as these communities have specific insights and detailed feedback that typically go unnoticed in broader datasets.
+
+🔗 Community Whitepaper: Explore our detailed strategy and join us in shaping the future of AI-driven platforms in our whitepaper.
+
+Our relentless effort stems from a clear vision we hold dearly: enhancing your daily life, saving time and allowing for more focus on what truly matters.
+
+Imagine a world where you think, and it happens. You desire a cup of coffee made exactly the way you love, and it's brewed for you. A world where you, simply think of a comprehensive data analysis report in a particular format, and it's done at the speed of your thought. The core idea is to turn the time-consuming, routine tasks over to our AI interface, freeing up your time and attention.
+
+This isn’t a sci-fi future; together, we are working towards it right now. As our AI models gradually become more capable and intuitively understand your specific needs, your most mundane responsibilities become automated. Through this profound shift, our collective time allowance can be redistributed towards grand endeavours. Think space exploration, longevity research or simply extra moments with loved ones.
+
+Creating this imagined future won't be a walk in the park, but with your help, we believe it's within our reach. Open WebUI is more than just tech - it's there to enhance your day, giving you more space for what's really important. Together, we're working on a brighter tomorrow. Thanks for joining us in this extraordinary journey.
+
+Join us as we push the boundaries of technology with these ambitious and transformative features in our roadmap! 💡🚀 Your participation and feedback are crucial as we strive to make Open WebUI a pioneering tool in technology advancement.

@@ -1,0 +1,22 @@
+reference: https://docs.openwebui.com/getting-started/
+title: Getting Started with Open WebUI
+
+🚀 Getting Started
+
+🚀 Getting Started
+
+Welcome to the Open WebUI Documentation Hub! Below is a list of essential guides and resources to help you get started, manage, and develop with Open WebUI.
+
+⏱️ Quick Start​
+
+Get up and running quickly with our Quick Start Guide.
+
+🛠️ Advanced Topics​
+
+Take a deeper dive into configurations and development tips in our Advanced Topics Guide.
+
+🔄 Updating Open WebUI​
+
+Stay current with the latest features and security patches with our Updating Open WebUI guide.
+
+Happy exploring! 🎉 If you have questions, join our community or raise an issue on GitHub.

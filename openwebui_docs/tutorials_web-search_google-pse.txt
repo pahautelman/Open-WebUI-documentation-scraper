@@ -1,0 +1,78 @@
+reference: https://docs.openwebui.com/tutorials/web-search/google-pse
+title: Google PSE
+
+📝 Tutorials🌐 Web SearchGoogle PSE
+
+📝 Tutorials
+
+🌐 Web Search
+
+Google PSE
+
+This tutorial is a community contribution and is not supported by the Open WebUI team. It serves only as a demonstration on how to customize Open WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.
+
+Google PSE API​
+
+Setup​
+
+Go to Google Developers, use Programmable Search Engine, and log on or create account. Go to control panel and click Add button Enter a search engine name, set the other properties to suit your needs, verify you're not a robot and click Create button. Generate API key and get the Search engine ID. (Available after the engine is created) With API key and Search engine ID, open Open WebUI Admin panel and click Settings tab, and then click Web Search Enable Web search and Set Web Search Engine to google_pse Fill Google PSE API Key with the API key and Google PSE Engine Id (# 4) Click Save
+
+Go to Google Developers, use Programmable Search Engine, and log on or create account.
+
+Go to control panel and click Add button
+
+Add
+
+Enter a search engine name, set the other properties to suit your needs, verify you're not a robot and click Create button.
+
+Create
+
+Generate API key and get the Search engine ID. (Available after the engine is created)
+
+API key
+
+Search engine ID
+
+With API key and Search engine ID, open Open WebUI Admin panel and click Settings tab, and then click Web Search
+
+API key
+
+Search engine ID
+
+Open WebUI Admin panel
+
+Settings
+
+Web Search
+
+Enable Web search and Set Web Search Engine to google_pse
+
+Web search
+
+Web Search Engine
+
+google_pse
+
+Fill Google PSE API Key with the API key and Google PSE Engine Id (# 4)
+
+Google PSE API Key
+
+API key
+
+Google PSE Engine Id
+
+Click Save
+
+Save
+
+[Image: Open WebUI Admin panel]
+
+Note​
+
+You have to enable Web search in the prompt field, using plus (+) button. Search the web ;-)
+
+Web search
+
++
+
+[Image: enable Web search]

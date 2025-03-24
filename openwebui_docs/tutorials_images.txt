@@ -1,0 +1,344 @@
+reference: https://docs.openwebui.com/tutorials/images
+title: 🎨 Image Generation
+
+📝 Tutorials🎨 Image Generation
+
+📝 Tutorials
+
+🎨 Image Generation
+
+This tutorial is a community contribution and is not supported by the Open WebUI team. It serves only as a demonstration on how to customize Open WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.
+
+Open WebUI supports image generation through three backends: AUTOMATIC1111, ComfyUI, and OpenAI DALL·E. This guide will help you set up and use either of these options.
+
+AUTOMATIC1111​
+
+Open WebUI supports image generation through the AUTOMATIC1111 API. Here are the steps to get started:
+
+Initial Setup​
+
+Ensure that you have AUTOMATIC1111 installed. Launch AUTOMATIC1111 with additional flags to enable API access: ./webui.sh --api --listen For Docker installation of WebUI with the environment variables preset, use the following command: docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -e AUTOMATIC1111_BASE_URL=http://host.docker.internal:7860/ -e ENABLE_IMAGE_GENERATION=True -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+
+Ensure that you have AUTOMATIC1111 installed.
+
+Ensure that you have AUTOMATIC1111 installed.
+
+Launch AUTOMATIC1111 with additional flags to enable API access: ./webui.sh --api --listen
+
+Launch AUTOMATIC1111 with additional flags to enable API access:
+
+./webui.sh --api --listen
+
+./webui.sh --api --listen
+
+For Docker installation of WebUI with the environment variables preset, use the following command: docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -e AUTOMATIC1111_BASE_URL=http://host.docker.internal:7860/ -e ENABLE_IMAGE_GENERATION=True -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+
+For Docker installation of WebUI with the environment variables preset, use the following command:
+
+docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -e AUTOMATIC1111_BASE_URL=http://host.docker.internal:7860/ -e ENABLE_IMAGE_GENERATION=True -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+
+docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -e AUTOMATIC1111_BASE_URL=http://host.docker.internal:7860/ -e ENABLE_IMAGE_GENERATION=True -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+
+Setting Up Open WebUI with AUTOMATIC1111​
+
+In Open WebUI, navigate to the Admin Panel > Settings > Images menu. Set the Image Generation Engine field to Default (Automatic1111). In the API URL field, enter the address where AUTOMATIC1111's API is accessible: http://<your_automatic1111_address>:7860/ If you're running a Docker installation of Open WebUI and AUTOMATIC1111 on the same host, use http://host.docker.internal:7860/ as your address.
+
+In Open WebUI, navigate to the Admin Panel > Settings > Images menu.
+
+In Open WebUI, navigate to the Admin Panel > Settings > Images menu.
+
+Set the Image Generation Engine field to Default (Automatic1111).
+
+Set the Image Generation Engine field to Default (Automatic1111).
+
+Image Generation Engine
+
+Default (Automatic1111)
+
+In the API URL field, enter the address where AUTOMATIC1111's API is accessible: http://<your_automatic1111_address>:7860/ If you're running a Docker installation of Open WebUI and AUTOMATIC1111 on the same host, use http://host.docker.internal:7860/ as your address.
+
+In the API URL field, enter the address where AUTOMATIC1111's API is accessible:
+
+http://<your_automatic1111_address>:7860/
+
+http://<your_automatic1111_address>:7860/
+
+If you're running a Docker installation of Open WebUI and AUTOMATIC1111 on the same host, use http://host.docker.internal:7860/ as your address.
+
+http://host.docker.internal:7860/
+
+ComfyUI​
+
+ComfyUI provides an alternative interface for managing and interacting with image generation models. Learn more or download it from its GitHub page. Below are the setup instructions to get ComfyUI running alongside your other tools.
+
+Initial Setup​
+
+Download and extract the ComfyUI software package from GitHub to your desired directory. To start ComfyUI, run the following command: python main.py For systems with low VRAM, launch ComfyUI with additional flags to reduce memory usage: python main.py --lowvram For Docker installation of WebUI with the environment variables preset, use the following command: docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -e COMFYUI_BASE_URL=http://host.docker.internal:7860/ -e ENABLE_IMAGE_GENERATION=True -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+
+Download and extract the ComfyUI software package from GitHub to your desired directory.
+
+Download and extract the ComfyUI software package from GitHub to your desired directory.
+
+To start ComfyUI, run the following command: python main.py For systems with low VRAM, launch ComfyUI with additional flags to reduce memory usage: python main.py --lowvram
+
+To start ComfyUI, run the following command:
+
+python main.py
+
+python main.py
+
+For systems with low VRAM, launch ComfyUI with additional flags to reduce memory usage:
+
+python main.py --lowvram
+
+python main.py --lowvram
+
+For Docker installation of WebUI with the environment variables preset, use the following command: docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -e COMFYUI_BASE_URL=http://host.docker.internal:7860/ -e ENABLE_IMAGE_GENERATION=True -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+
+For Docker installation of WebUI with the environment variables preset, use the following command:
+
+docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -e COMFYUI_BASE_URL=http://host.docker.internal:7860/ -e ENABLE_IMAGE_GENERATION=True -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+
+docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -e COMFYUI_BASE_URL=http://host.docker.internal:7860/ -e ENABLE_IMAGE_GENERATION=True -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+
+Setting Up Open WebUI with ComfyUI​
+
+Setting Up FLUX.1 Models​
+
+Model Checkpoints:
+
+Model Checkpoints:
+
+Download either the FLUX.1-schnell or FLUX.1-dev model from the black-forest-labs HuggingFace page. Place the model checkpoint(s) in both the models/checkpoints and models/unet directories of ComfyUI. Alternatively, you can create a symbolic link between models/checkpoints and models/unet to ensure both directories contain the same model checkpoints.
+
+Download either the FLUX.1-schnell or FLUX.1-dev model from the black-forest-labs HuggingFace page.
+
+FLUX.1-schnell
+
+FLUX.1-dev
+
+Place the model checkpoint(s) in both the models/checkpoints and models/unet directories of ComfyUI. Alternatively, you can create a symbolic link between models/checkpoints and models/unet to ensure both directories contain the same model checkpoints.
+
+models/checkpoints
+
+models/unet
+
+models/checkpoints
+
+models/unet
+
+VAE Model:
+
+VAE Model:
+
+Download ae.safetensors VAE from here. Place it in the models/vae ComfyUI directory.
+
+Download ae.safetensors VAE from here.
+
+ae.safetensors
+
+Place it in the models/vae ComfyUI directory.
+
+models/vae
+
+CLIP Model:
+
+CLIP Model:
+
+Download clip_l.safetensors from here. Place it in the models/clip ComfyUI directory.
+
+Download clip_l.safetensors from here.
+
+clip_l.safetensors
+
+Place it in the models/clip ComfyUI directory.
+
+models/clip
+
+T5XXL Model:
+
+T5XXL Model:
+
+Download either the t5xxl_fp16.safetensors or t5xxl_fp8_e4m3fn.safetensors model from here. Place it in the models/clip ComfyUI directory.
+
+Download either the t5xxl_fp16.safetensors or t5xxl_fp8_e4m3fn.safetensors model from here.
+
+t5xxl_fp16.safetensors
+
+t5xxl_fp8_e4m3fn.safetensors
+
+Place it in the models/clip ComfyUI directory.
+
+models/clip
+
+To integrate ComfyUI into Open WebUI, follow these steps:
+
+Step 1: Configure Open WebUI Settings​
+
+Navigate to the Admin Panel in Open WebUI. Click on Settings and then select the Images tab. In the Image Generation Engine field, choose ComfyUI. In the API URL field, enter the address where ComfyUI's API is accessible, following this format: http://<your_comfyui_address>:8188/. Set the environment variable COMFYUI_BASE_URL to this address to ensure it persists within the WebUI.
+
+Navigate to the Admin Panel in Open WebUI.
+
+Click on Settings and then select the Images tab.
+
+In the Image Generation Engine field, choose ComfyUI.
+
+Image Generation Engine
+
+ComfyUI
+
+In the API URL field, enter the address where ComfyUI's API is accessible, following this format: http://<your_comfyui_address>:8188/. Set the environment variable COMFYUI_BASE_URL to this address to ensure it persists within the WebUI.
+
+http://<your_comfyui_address>:8188/
+
+Set the environment variable COMFYUI_BASE_URL to this address to ensure it persists within the WebUI.
+
+Set the environment variable COMFYUI_BASE_URL to this address to ensure it persists within the WebUI.
+
+COMFYUI_BASE_URL
+
+Step 2: Verify the Connection and Enable Image Generation​
+
+Ensure ComfyUI is running and that you've successfully verified the connection to Open WebUI. You won't be able to proceed without a successful connection. Once the connection is verified, toggle on Image Generation (Experimental). More options will be presented to you. Continue to step 3 for the final configuration steps.
+
+Ensure ComfyUI is running and that you've successfully verified the connection to Open WebUI. You won't be able to proceed without a successful connection.
+
+Once the connection is verified, toggle on Image Generation (Experimental). More options will be presented to you.
+
+Continue to step 3 for the final configuration steps.
+
+Step 3: Configure ComfyUI Settings and Import Workflow​
+
+Enable developer mode within ComfyUI. To do this, look for the gear icon above the Queue Prompt button within ComfyUI and enable the Dev Mode toggle. Export the desired workflow from ComfyUI in API format using the Save (API Format) button. The file will be downloaded as workflow_api.json if done correctly. Return to Open WebUI and click the Click here to upload a workflow.json file button. Select the workflow_api.json file to import the exported workflow from ComfyUI into Open WebUI. After importing the workflow, you must map the ComfyUI Workflow Nodes according to the imported workflow node IDs. Set Set Default Model to the name of the model file being used, such as flux1-dev.safetensors
+
+Enable developer mode within ComfyUI. To do this, look for the gear icon above the Queue Prompt button within ComfyUI and enable the Dev Mode toggle.
+
+Dev Mode
+
+Export the desired workflow from ComfyUI in API format using the Save (API Format) button. The file will be downloaded as workflow_api.json if done correctly.
+
+API format
+
+Save (API Format)
+
+workflow_api.json
+
+Return to Open WebUI and click the Click here to upload a workflow.json file button.
+
+Select the workflow_api.json file to import the exported workflow from ComfyUI into Open WebUI.
+
+workflow_api.json
+
+After importing the workflow, you must map the ComfyUI Workflow Nodes according to the imported workflow node IDs.
+
+ComfyUI Workflow Nodes
+
+Set Set Default Model to the name of the model file being used, such as flux1-dev.safetensors
+
+Set Default Model
+
+flux1-dev.safetensors
+
+You may need to adjust an Input Key or two within Open WebUI's ComfyUI Workflow Nodes section to match a node within your workflow. For example, seed may need to be renamed to noise_seed to match a node ID within your imported workflow.
+
+Input Key
+
+ComfyUI Workflow Nodes
+
+seed
+
+noise_seed
+
+Some workflows, such as ones that use any of the Flux models, may utilize multiple nodes IDs that is necessary to fill in for their node entry fields within Open WebUI. If a node entry field requires multiple IDs, the node IDs should be comma separated (e.g. 1 or 1, 2).
+
+1
+
+1, 2
+
+Click Save to apply the settings and enjoy image generation with ComfyUI integrated into Open WebUI!
+
+Click Save to apply the settings and enjoy image generation with ComfyUI integrated into Open WebUI!
+
+Save
+
+After completing these steps, your ComfyUI setup should be integrated with Open WebUI, and you can use the Flux.1 models for image generation.
+
+Configuring with SwarmUI​
+
+SwarmUI utilizes ComfyUI as its backend. In order to get Open WebUI to work with SwarmUI you will have to append ComfyBackendDirect to the ComfyUI Base URL. Additionally, you will want to setup SwarmUI with LAN access. After aforementioned adjustments, setting up SwarmUI to work with Open WebUI will be the same as Step one: Configure Open WebUI Settings as outlined above.
+
+ComfyBackendDirect
+
+ComfyUI Base URL
+
+[Image: Install SwarmUI with LAN Access]
+
+SwarmUI API URL​
+
+The address you will input as the ComfyUI Base URL will look like: http://<your_swarmui_address>:7801/ComfyBackendDirect
+
+http://<your_swarmui_address>:7801/ComfyBackendDirect
+
+OpenAI DALL·E​
+
+Open WebUI also supports image generation through the OpenAI DALL·E APIs. This option includes a selector for choosing between DALL·E 2 and DALL·E 3, each supporting different image sizes.
+
+Initial Setup​
+
+Obtain an API key from OpenAI.
+
+Obtain an API key from OpenAI.
+
+Configuring Open WebUI​
+
+In Open WebUI, navigate to the Admin Panel > Settings > Images menu. Set the Image Generation Engine field to Open AI (Dall-E). Enter your OpenAI API key. Choose the DALL·E model you wish to use. Note that image size options will depend on the selected model: DALL·E 2: Supports 256x256, 512x512, or 1024x1024 images. DALL·E 3: Supports 1024x1024, 1792x1024, or 1024x1792 images.
+
+In Open WebUI, navigate to the Admin Panel > Settings > Images menu.
+
+Set the Image Generation Engine field to Open AI (Dall-E).
+
+Image Generation Engine
+
+Open AI (Dall-E)
+
+Enter your OpenAI API key.
+
+Choose the DALL·E model you wish to use. Note that image size options will depend on the selected model: DALL·E 2: Supports 256x256, 512x512, or 1024x1024 images. DALL·E 3: Supports 1024x1024, 1792x1024, or 1024x1792 images.
+
+DALL·E 2: Supports 256x256, 512x512, or 1024x1024 images. DALL·E 3: Supports 1024x1024, 1792x1024, or 1024x1792 images.
+
+DALL·E 2: Supports 256x256, 512x512, or 1024x1024 images.
+
+256x256
+
+512x512
+
+1024x1024
+
+DALL·E 3: Supports 1024x1024, 1792x1024, or 1024x1792 images.
+
+1024x1024
+
+1792x1024
+
+1024x1792
+
+Azure OpenAI​
+
+Using Azure OpenAI Dall-E directly is unsupported, but you can set up a LiteLLM proxy which is compatible with the Open AI (Dall-E) Image Generation Engine.
+
+Open AI (Dall-E)
+
+Using Image Generation​
+
+[Image: Image Generation Tutorial]
+
+First, use a text generation model to write a prompt for image generation. After the response has finished, you can click the Picture icon to generate an image. After the image has finished generating, it will be returned automatically in chat.
+
+First, use a text generation model to write a prompt for image generation.
+
+After the response has finished, you can click the Picture icon to generate an image.
+
+After the image has finished generating, it will be returned automatically in chat.
+
+You can also edit the LLM's response and enter your image generation prompt as the message to send off for image generation instead of using the actual response provided by the LLM.

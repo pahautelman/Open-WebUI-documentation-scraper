@@ -1,0 +1,226 @@
+reference: https://docs.openwebui.com/features/plugin/tools/
+title: ⚙️ Tools
+
+⭐ Features🛠️ Tools & Functions⚙️ Tools
+
+⭐ Features
+
+🛠️ Tools & Functions
+
+⚙️ Tools
+
+What are Tools?​
+
+Tools are python scripts that are provided to an LLM at the time of the request. Tools allow LLMs to perform actions and receive additional context as a result. Generally speaking, your LLM of choice will need to support function calling for tools to be reliably utilized.
+
+Tools enable many use cases for chats, including web search, web scraping, and API interactions within the chat.
+
+Many Tools are available to use on the Community Website and can easily be imported into your Open WebUI instance.
+
+How can I use Tools?​
+
+Once installed, Tools can be used by assigning them to any LLM that supports function calling and then enabling that Tool. To assign a Tool to a model, you need to navigate to Workspace => Models. Here you can select the model for which you’d like to enable any Tools.
+
+Once you click the pencil icon to edit the model settings, scroll down to the Tools section and check any Tools you wish to enable. Once done you must click save.
+
+Now that Tools are enabled for the model, you can click the “+” icon when chatting with an LLM to use various Tools. Please keep in mind that enabling a Tool does not force it to be used. It means the LLM will be provided the option to call this Tool.
+
+Lastly, we do provide a filter function on the community site that allows LLMs to autoselect Tools without you needing to enable them in the “+” icon menu: https://openwebui.com/f/hub/autotool_filter/
+
+Please note: when using the AutoTool Filter, you will still need to take the steps above to enable the Tools per model.
+
+How to install Tools​
+
+The Tools import process is quite simple. You will have two options:
+
+Download and import manually​
+
+Navigate to the community site: https://openwebui.com/tools/
+
+Click on the Tool you wish to import Click the blue “Get” button in the top right-hand corner of the page Click “Download as JSON export” You can now upload the Tool into Open WebUI by navigating to Workspace => Tools and clicking “Import Tools”
+
+Click on the Tool you wish to import
+
+Click the blue “Get” button in the top right-hand corner of the page
+
+Click “Download as JSON export”
+
+You can now upload the Tool into Open WebUI by navigating to Workspace => Tools and clicking “Import Tools”
+
+Import via your Open WebUI URL​
+
+Navigate to the community site: https://openwebui.com/tools/ Click on the Tool you wish to import Click the blue “Get” button in the top right-hand corner of the page Enter the IP address of your Open WebUI instance and click “Import to WebUI” which will automatically open your instance and allow you to import the Tool.
+
+Navigate to the community site: https://openwebui.com/tools/
+
+Click on the Tool you wish to import
+
+Click the blue “Get” button in the top right-hand corner of the page
+
+Enter the IP address of your Open WebUI instance and click “Import to WebUI” which will automatically open your instance and allow you to import the Tool.
+
+Note: You can install your own Tools and other Tools not tracked on the community site using the manual import method. Please do not import Tools you do not understand or are not from a trustworthy source. Running unknown code is ALWAYS a risk.
+
+What sorts of things can Tools do?​
+
+Tools enable diverse use cases for interactive conversations by providing a wide range of functionality such as:
+
+Web Search: Perform live web searches to fetch real-time information. Image Generation: Generate images based on the user prompt External Voice Synthesis: Make API requests within the chat to integrate external voice synthesis service ElevenLabs and generate audio based on the LLM output.
+
+Web Search: Perform live web searches to fetch real-time information.
+
+Image Generation: Generate images based on the user prompt
+
+External Voice Synthesis: Make API requests within the chat to integrate external voice synthesis service ElevenLabs and generate audio based on the LLM output.
+
+Writing A Custom Toolkit​
+
+Toolkits are defined in a single Python file, with a top level docstring with metadata and a Tools class.
+
+Tools
+
+Example Top-Level Docstring​
+
+"""title: String Inverseauthor: Your Nameauthor_url: https://website.comgit_url: https://github.com/username/string-reverse.gitdescription: This tool calculates the inverse of a stringrequired_open_webui_version: 0.4.0requirements: langchain-openai, langgraph, ollama, langchain_ollamaversion: 0.4.0licence: MIT"""
+
+"""title: String Inverseauthor: Your Nameauthor_url: https://website.comgit_url: https://github.com/username/string-reverse.gitdescription: This tool calculates the inverse of a stringrequired_open_webui_version: 0.4.0requirements: langchain-openai, langgraph, ollama, langchain_ollamaversion: 0.4.0licence: MIT"""
+
+Tools Class​
+
+Tools have to be defined as methods within a class called Tools, with optional subclasses called Valves and UserValves, for example:
+
+Tools
+
+Valves
+
+UserValves
+
+class Tools: def __init__(self): """Initialize the Tool.""" self.valves = self.Valves() class Valves(BaseModel): api_key: str = Field("", description="Your API key here") def reverse_string(self, string: str) -> str: """ Reverses the input string. :param string: The string to reverse """ # example usage of valves if self.valves.api_key != "42": return "Wrong API key" return string[::-1]
+
+class Tools: def __init__(self): """Initialize the Tool.""" self.valves = self.Valves() class Valves(BaseModel): api_key: str = Field("", description="Your API key here") def reverse_string(self, string: str) -> str: """ Reverses the input string. :param string: The string to reverse """ # example usage of valves if self.valves.api_key != "42": return "Wrong API key" return string[::-1]
+
+Type Hints​
+
+Each tool must have type hints for arguments. As of version OpenWebUI version 0.4.3, the types may also be nested, such as queries_and_docs: list[tuple[str, int]]. Those type hints are used to generate the JSON schema that is sent to the model. Tools without type hints will work with a lot less consistency.
+
+queries_and_docs: list[tuple[str, int]]
+
+Valves and UserValves - (optional, but HIGHLY encouraged)​
+
+Valves and UserValves are used to allow users to provide dynamic details such as an API key or a configuration option. These will create a fillable field or a bool switch in the GUI menu for the given Tool.
+
+Valves are configurable by admins alone and UserValves are configurable by any users.
+
+# Define and Valves class Valves(BaseModel): priority: int = Field( default=0, description="Priority level for the filter operations." ) test_valve: int = Field( default=4, description="A valve controlling a numerical value" ) pass # Define any UserValves class UserValves(BaseModel): test_user_valve: bool = Field( default=False, description="A user valve controlling a True/False (on/off) switch" ) pass def __init__(self): self.valves = self.Valves()
+
+# Define and Valves class Valves(BaseModel): priority: int = Field( default=0, description="Priority level for the filter operations." ) test_valve: int = Field( default=4, description="A valve controlling a numerical value" ) pass # Define any UserValves class UserValves(BaseModel): test_user_valve: bool = Field( default=False, description="A user valve controlling a True/False (on/off) switch" ) pass def __init__(self): self.valves = self.Valves()
+
+Optional Arguments​
+
+Below is a list of optional arguments your tools can depend on:
+
+__event_emitter__: Emit events (see following section) __event_call__: Same as event emitter but can be used for user interactions __user__: A dictionary with user information __metadata__: Dictionary with chat metadata __messages__: List of previous messages __files__: Attached files __model__: Model name
+
+__event_emitter__: Emit events (see following section)
+
+__event_emitter__
+
+__event_call__: Same as event emitter but can be used for user interactions
+
+__event_call__
+
+__user__: A dictionary with user information
+
+__user__
+
+__metadata__: Dictionary with chat metadata
+
+__metadata__
+
+__messages__: List of previous messages
+
+__messages__
+
+__files__: Attached files
+
+__files__
+
+__model__: Model name
+
+__model__
+
+Event Emitters​
+
+Event Emitters are used to add additional information to the chat interface. Similarly to Filter Outlets, Event Emitters are capable of appending content to the chat. Unlike Filter Outlets, they are not capable of stripping information. Additionally, emitters can be activated at any stage during the Tool.
+
+There are two different types of Event Emitters:
+
+Status​
+
+This is used to add statuses to a message while it is performing steps. These can be done at any stage during the Tool. These statuses appear right above the message content. These are very useful for Tools that delay the LLM response or process large amounts of information. This allows you to inform users what is being processed in real-time.
+
+await __event_emitter__( { "type": "status", # We set the type here "data": {"description": "Message that shows up in the chat", "done": False, "hidden": False}, # Note done is False here indicating we are still emitting statuses } )
+
+await __event_emitter__( { "type": "status", # We set the type here "data": {"description": "Message that shows up in the chat", "done": False, "hidden": False}, # Note done is False here indicating we are still emitting statuses } )
+
+async def test_function( self, prompt: str, __user__: dict, __event_emitter__=None ) -> str: """ This is a demo :param test: this is a test parameter """ await __event_emitter__( { "type": "status", # We set the type here "data": {"description": "Message that shows up in the chat", "done": False}, # Note done is False here indicating we are still emitting statuses } ) # Do some other logic here await __event_emitter__( { "type": "status", "data": {"description": "Completed a task message", "done": True, "hidden": False}, # Note done is True here indicating we are done emitting statuses # You can also set "hidden": True if you want to remove the status once the message is returned } ) except Exception as e: await __event_emitter__( { "type": "status", "data": {"description": f"An error occured: {e}", "done": True}, } ) return f"Tell the user: {e}"
+
+async def test_function( self, prompt: str, __user__: dict, __event_emitter__=None ) -> str: """ This is a demo :param test: this is a test parameter """ await __event_emitter__( { "type": "status", # We set the type here "data": {"description": "Message that shows up in the chat", "done": False}, # Note done is False here indicating we are still emitting statuses } ) # Do some other logic here await __event_emitter__( { "type": "status", "data": {"description": "Completed a task message", "done": True, "hidden": False}, # Note done is True here indicating we are done emitting statuses # You can also set "hidden": True if you want to remove the status once the message is returned } ) except Exception as e: await __event_emitter__( { "type": "status", "data": {"description": f"An error occured: {e}", "done": True}, } ) return f"Tell the user: {e}"
+
+Message​
+
+This type is used to append a message to the LLM at any stage in the Tool. This means that you can append messages, embed images, and even render web pages before, or after, or during the LLM response.
+
+await __event_emitter__( { "type": "message", # We set the type here "data": {"content": "This message will be appended to the chat."}, # Note that with message types we do NOT have to set a done condition } )
+
+await __event_emitter__( { "type": "message", # We set the type here "data": {"content": "This message will be appended to the chat."}, # Note that with message types we do NOT have to set a done condition } )
+
+async def test_function( self, prompt: str, __user__: dict, __event_emitter__=None ) -> str: """ This is a demo :param test: this is a test parameter """ await __event_emitter__( { "type": "message", # We set the type here "data": {"content": "This message will be appended to the chat."}, # Note that with message types we do NOT have to set a done condition } ) except Exception as e: await __event_emitter__( { "type": "status", "data": {"description": f"An error occured: {e}", "done": True}, } ) return f"Tell the user: {e}"
+
+async def test_function( self, prompt: str, __user__: dict, __event_emitter__=None ) -> str: """ This is a demo :param test: this is a test parameter """ await __event_emitter__( { "type": "message", # We set the type here "data": {"content": "This message will be appended to the chat."}, # Note that with message types we do NOT have to set a done condition } ) except Exception as e: await __event_emitter__( { "type": "status", "data": {"description": f"An error occured: {e}", "done": True}, } ) return f"Tell the user: {e}"
+
+Citations​
+
+This type is used to provide citations or references in the chat. You can utilize it to specify the content, the source, and any relevant metadata. Below is an example of how to emit a citation event:
+
+await __event_emitter__( { "type": "citation", "data": { "document": [content], "metadata": [ { "date_accessed": datetime.now().isoformat(), "source": title, } ], "source": {"name": title, "url": url}, }, })
+
+await __event_emitter__( { "type": "citation", "data": { "document": [content], "metadata": [ { "date_accessed": datetime.now().isoformat(), "source": title, } ], "source": {"name": title, "url": url}, }, })
+
+If you are sending multiple citations, you can iterate over citations and call the emitter multiple times. When implementing custom citations, ensure that you set self.citation = False in your Tools class __init__ method. Otherwise, the built-in citations will override the ones you have pushed in. For example:
+
+self.citation = False
+
+Tools
+
+__init__
+
+def __init__(self): self.citation = False
+
+def __init__(self): self.citation = False
+
+Warning: if you set self.citation = True, this will replace any custom citations you send with the automatically generated return citation. By disabling it, you can fully manage your own citation references.
+
+self.citation = True
+
+class Tools: class UserValves(BaseModel): test: bool = Field( default=True, description="test" ) def __init__(self): self.citation = Falseasync def test_function( self, prompt: str, __user__: dict, __event_emitter__=None ) -> str: """ This is a demo that just creates a citation :param test: this is a test parameter """ await __event_emitter__( { "type": "citation", "data": { "document": ["This message will be appended to the chat as a citation when clicked into"], "metadata": [ { "date_accessed": datetime.now().isoformat(), "source": title, } ], "source": {"name": "Title of the content", "url": "http://link-to-citation"}, }, } )
+
+class Tools: class UserValves(BaseModel): test: bool = Field( default=True, description="test" ) def __init__(self): self.citation = Falseasync def test_function( self, prompt: str, __user__: dict, __event_emitter__=None ) -> str: """ This is a demo that just creates a citation :param test: this is a test parameter """ await __event_emitter__( { "type": "citation", "data": { "document": ["This message will be appended to the chat as a citation when clicked into"], "metadata": [ { "date_accessed": datetime.now().isoformat(), "source": title, } ], "source": {"name": "Title of the content", "url": "http://link-to-citation"}, }, } )
+
+External packages​
+
+In the Tools definition metadata you can specify custom packages. When you click Save the line will be parsed and pip install will be run on all requirements at once.
+
+Save
+
+pip install
+
+Keep in mind that as pip is used in the same process as Open-WebUI, the UI will be completely unresponsive during the installation.
+
+No measures are taken to handle package conflicts with Open-WebUI's requirements. That means that specifying requirements can break OpenWebUI if you're not careful. You might be able to work around this by specifying open-webui itself as a requirement.
+
+open-webui
+
+"""title: myToolNameauthor: myNamefunding_url: [any link here will be shown behind a `Heart` button for users to show their support to you]version: 1.0.0# the version is displayed in the UI to help users keep track of updates.license: GPLv3description: [recommended]requirements: package1>=2.7.0,package2,package3"""
+
+"""title: myToolNameauthor: myNamefunding_url: [any link here will be shown behind a `Heart` button for users to show their support to you]version: 1.0.0# the version is displayed in the UI to help users keep track of updates.license: GPLv3description: [recommended]requirements: package1>=2.7.0,package2,package3"""
